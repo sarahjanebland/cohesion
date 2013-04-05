@@ -3,18 +3,6 @@
 </h2>
 
 
-<% if current_user %>
 
   Hi user number <%= current_user.uid %>
-  <br>
-  <%= link_to "Create Profile", edit_user_path(current_user.id) %>
-  <br>
-  <%= link_to "Sign Out", signout_path %>
 
-<% else %>
-  
-  <div>
-  <%= link_to "Auth with Github", "/auth/github" %> to make some new friends!
-  </div>
-
-<% end %>
