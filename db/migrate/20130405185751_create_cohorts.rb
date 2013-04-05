@@ -3,7 +3,7 @@ class CreateCohorts < ActiveRecord::Migration
     create_table :cohorts do |t|
       t.string :name
       t.string :start_date
-      t.string :email
+      t.string :group_email
       t.timestamps
     end
   end

@@ -6,7 +6,9 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'rails_config'
 gem 'omniauth'
+gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'dropbox-sdk'
 
 
