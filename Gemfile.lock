@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/intridea/omniauth-github.git
-  revision: 77cfd542d24ae8d75e77810fb816eef7abb2dd27
-  specs:
-    omniauth-github (1.1.0)
-      omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -89,6 +81,9 @@ GEM
     omniauth (1.1.3)
       hashie (~> 1.2)
       rack
+    omniauth-github (1.1.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
@@ -162,7 +157,7 @@ DEPENDENCIES
   factory_girl_rails
   jquery-rails
   omniauth
-  omniauth-github!
+  omniauth-github
   rails (= 3.2.12)
   rails_config
   rspec-rails

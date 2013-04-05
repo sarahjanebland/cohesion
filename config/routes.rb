@@ -2,7 +2,9 @@ Phaseboot::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
-  get '/auth/:provider/callback', to: 'users#create'
+  root to: "users#index"
+
+  get '/auth/:provider/callback', to: 'sessions#create'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

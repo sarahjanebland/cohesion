@@ -8,7 +8,7 @@ gem 'rails', '3.2.12'
 gem 'sqlite3'
 gem 'rails_config'
 gem 'omniauth'
-gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
+gem 'omniauth-github'
 gem 'dropbox-sdk'
 
 

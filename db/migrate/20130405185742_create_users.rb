@@ -6,7 +6,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.string :email
       t.string :session_token
-      t.string :github_token
       t.string :phone
       t.string :job
       t.string :city
@@ -15,6 +14,9 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :github_id
       t.string :url
       t.string :blog
+      t.string :provider
+      t.integer :uid
+      t.string :name
 
       t.timestamps
     end
