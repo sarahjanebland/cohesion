@@ -32,14 +32,14 @@ ActiveRecord::Schema.define(:version => 20130405185751) do
     t.string   "city"
     t.string   "advice_tweet"
     t.string   "fav_restaurant"
-    t.integer  "github_id"
+    t.string   "github_username"
     t.string   "url"
     t.string   "blog"
     t.string   "provider"
     t.integer  "uid"
     t.string   "name"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

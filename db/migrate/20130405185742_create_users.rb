@@ -11,7 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :city
       t.string :advice_tweet
       t.string :fav_restaurant
-      t.integer :github_id
+      t.string :github_username
       t.string :url
       t.string :blog
       t.string :provider

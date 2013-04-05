@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :email, :phone, :job, :city, :advice_tweet, :fav_restaurant, :url, :blog
+  attr_accessible :first_name, :last_name, :email, :github_username, :phone, :job, :city, :advice_tweet, :fav_restaurant, :url, :blog
   belongs_to :cohort
 
   # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

@@ -1,14 +1,20 @@
 <h2>
   hey world check out the awesome dbc students
 </h2>
-<div>
+
+
+<% if current_user %>
+
+  Hi user number <%= current_user.uid %>
+  <br>
+  <%= link_to "Create Profile", edit_user_path(current_user.id) %>
+  <br>
+  <%= link_to "Sign Out", signout_path %>
+
+<% else %>
+  
+  <div>
   <%= link_to "Auth with Github", "/auth/github" %> to make some new friends!
-</div>
+  </div>
 
-
-
-
-
-Hi user number <%= current_user.uid %>
-
-
+<% end %>

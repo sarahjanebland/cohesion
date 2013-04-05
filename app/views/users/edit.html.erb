@@ -1,0 +1,20 @@
+<h1>Edit your Profile!</h1>
+
+<%= form_for @user do |f| %>
+  
+  <%= f.collection_select :cohort_id, Cohort.all, :id, :name %>
+  <%= f.text_field :first_name, {:placeholder => 'first name'} %> 
+  <%= f.text_field :last_name, {:placeholder => 'last name'} %>
+  <%= f.email_field :email, {:placeholder => 'email address'} %>
+  <%= f.text_field :phone, {:placeholder => 'phone'} %>
+  <%= f.text_field :job, {:placeholder => 'employer'} %> 
+  <%= f.text_field :city, {:placeholder => 'location'} %>
+  <%= f.text_field :advice_tweet, {:placeholder => 'tweet advice'} %>
+  <%= f.text_field :fav_restaurant, {:placeholder => 'favorite restaurants'} %>
+  <%= f.text_field :github_username, {:placeholder => 'github username'} %>
+  <%= f.text_field :url, {:placeholder => 'URL'} %>
+  <%= f.text_field :blog, {:placeholder => 'blog'} %>
+  
+  <%= f.submit "Go!" %>
+
+<% end %>
