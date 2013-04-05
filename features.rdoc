@@ -1,0 +1,13 @@
+features to add:
+
+marital status
+vices
+favorite food
+favorite drink
+location map for stalking
+instructors?
+cohort name generator
+
+      t.integer :twitter_id
+      t.string :facebook_username
+      t.integer :linkedin_id
