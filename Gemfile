@@ -9,7 +9,6 @@ gem 'sqlite3'
 gem 'rails_config'
 gem 'omniauth'
 gem 'omniauth-github'
-gem 'dropbox-sdk'
 
 
 # Gems used only for assets and not required
@@ -31,6 +30,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 # To use ActiveModel has_secure_password
