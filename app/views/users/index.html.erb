@@ -2,6 +2,9 @@
   hey world check out the awesome dbc students
 </h2>
 
+<% @images.each do |img| %>
+  <img src="<%= img %>" />
+<% end %>
 
 <% if current_user %>
 
