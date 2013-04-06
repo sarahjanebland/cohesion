@@ -2,7 +2,21 @@ class SessionsController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
-    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
+    p auth
+    user = User.find_or_create_by_uid(
+                :uid => auth.uid,
+                :provider => auth.provider,
+                :email => auth.info.email,
+                :nickname => auth.info.nickname,
+                :first_name => auth.info.first_name || auth.info.name.split(' ').first,
+                :last_name => auth.info.last_name || auth.info.name.split(' ').last,
+                :location => auth.extra.raw_info.location,
+                :phone => auth.info.phone,
+                :github_token => auth.credentials.token,
+                :blog => auth.extra.raw_info.blog || auth.info.urls['Blog'],
+                :url => auth.extra.raw_info.html_url || auth.info.urls['Github']
+                )
+    
     session[:token] = user.session_token = SecureRandom.hex
     if user.save
       redirect_to root_url, :notice => "Signed in!"
