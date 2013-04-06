@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'rails_config'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'nokogiri'
 
 
 # Gems used only for assets and not required
