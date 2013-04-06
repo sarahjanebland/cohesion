@@ -12,6 +12,14 @@
  *= require_tree .
  */
 
+ header {
+  line-height: 40px;
+ }
+
+ header a:hover {
+  text-decoration: none;
+ }
+
 #top_container {
   margin-top: 70px;
 }

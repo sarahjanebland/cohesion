@@ -1,9 +1,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "PhaseBoot", root_path, id: "logo" %>
-      <nav>
-        <ul class="nav pull-right">
+      <%= link_to "PhaseBoot", root_path, id: "logo", class: "pull-left" %>
+      <nav class="pull-right">
+        <ul class="nav">
           <% if current_user %>
 
           <li><%= link_to "Create Profile", edit_user_path(current_user.id) %></li>
