@@ -6,8 +6,9 @@
 
   <ul class="avatars">
     <% @avatars.each do |img| %>
-      <li class="avatar">
-        <%= f.radio_button :photo_url, img %>
+      <% select = img.include?(@user.first_name.downcase) %>
+      <li class="avatar <%= select ? 'selected' : '' %>">
+        <%= f.radio_button :photo_url, img, :checked => select  %>
         <%= image_tag img %>
       </li>
     <% end %>
