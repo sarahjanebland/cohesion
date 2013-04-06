@@ -1,9 +1,20 @@
 Welcome to your profile page, <%= @user.first_name %>
 
+
 <div>
-<%= image_tag @user.photo_url %>
-<%= @user.first_name %>
-<%= @user.last_name %>
-<%= @user.email %>
-<%= @user.github_username %>
+  <%= image_tag @user.photo_url %>
+</div>
+<div>
+<ul id='user_info'>
+  <li>First Name: <%= @user.first_name %></li>
+  <li>Last Name: <%= @user.last_name %></li>
+  <li>Email: <%= @user.email %></li>
+  <li>Phone #: <%= @user.phone %></li>
+  <li>Find me on Github: <%= @user.github_username %></li>
+  <li>Current job: <%= @user.job %></li>
+  <li>Current city: <%= @user.city %></li>
+  <li>Website: <%= @user.url %></li>
+  <li>Blog: <%= @user.blog %></li>
+  <li>Tweeted Advice: <%= @user.advice_tweet %></li>
+  <li>Favorite Restaurant: <%= @user.fav_restaurant %></li>
 </div>
