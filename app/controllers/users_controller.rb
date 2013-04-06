@@ -2,6 +2,11 @@ class UsersController < ApplicationController
 
   def index 
     @users = User.all
+
+    doc = Nokogiri::HTML(open('https://www.dropbox.com/sh/unxdinxldakcyc8/2_BhxGIPPw/gravatars'))
+    @images = doc.css("ol#gallery-view-media li img").map do |li|
+      li['data-src']
+    end
   end
 
   def create

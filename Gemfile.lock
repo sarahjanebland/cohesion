@@ -73,6 +73,7 @@ GEM
     mime-types (1.22)
     multi_json (1.7.2)
     multipart-post (1.2.0)
+    nokogiri (1.5.9)
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -157,6 +158,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   factory_girl_rails
   jquery-rails
+  nokogiri
   omniauth
   omniauth-github
   rails (= 3.2.12)
