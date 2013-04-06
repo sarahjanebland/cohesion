@@ -1,11 +1,12 @@
+<div id='home_page_header'> 
 <h2>
-  hey world check out the awesome dbc students
+  The awesome Banana Slugs
 </h2>
+<%if current_user %>
+<% @users.each do |user| %>
+  <%= link_to image_tag(user.photo_url), "/users/#{user.id}" %>  
+  <% end %>
 
-<% @images.each do |img| %>
-  <img src="<%= img %>" />
 <% end %>
 
-
-  Hi user number <%= current_user.uid %>
-
+</div>
