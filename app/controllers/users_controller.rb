@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def index 
     @users = User.all
+    @avatars = avatars
   end
 
   def create
@@ -13,12 +14,8 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(current_user.id)
     @cohorts = Cohort.all
-    doc = Nokogiri::HTML(open('https://www.dropbox.com/sh/unxdinxldakcyc8/2_BhxGIPPw/gravatars'))
-    @images = doc.css("ol#gallery-view-media li img").map do |li|
-      li['data-src']
+    @avatars = avatars
   end
-    
-  end 
 
   def show
     @user = User.find(params[:id])
@@ -33,5 +30,12 @@ class UsersController < ApplicationController
 
   def logout
     reset_session
+  end
+
+  private
+
+  def avatars
+    doc = Nokogiri::HTML(open('https://www.dropbox.com/sh/unxdinxldakcyc8/2_BhxGIPPw/gravatars'))
+    doc.css("ol#gallery-view-media li img").map { |li| li['data-src'] }
   end
 end

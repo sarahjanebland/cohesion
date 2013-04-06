@@ -4,9 +4,8 @@
 </h2>
 <%if current_user %>
 <% @users.each do |user| %>
-  <%= link_to image_tag(user.photo_url), "/users/#{user.id}" %>  
+  <%= link_to image_tag(avatar(user.photo_url, @avatars)), "/users/#{user.id}" %>  
   <% end %>
 
 <% end %>
-
 </div>
