@@ -11,6 +11,8 @@ gem 'omniauth'
 gem 'omniauth-github'
 
 gem 'bootstrap-sass'
+gem 'nokogiri'
+
 
 gem 'nokogiri'
 
