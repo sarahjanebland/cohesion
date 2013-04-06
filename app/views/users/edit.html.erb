@@ -3,60 +3,64 @@
 
 <h3>Edit your Profile </h3>
 <%= form_for @user, :html => {:class => "form-horizontal"} do |f| %>
-  <%= @user.id %>
 
-  <% @images.each do |img| %>
-    <%= f.radio_button :photo_url, img %> <%= image_tag img %>
-  <% end %>
+  <ul class="avatars">
+    <% @images.each do |img| %>
+      <li class="avatar">
+        <%= f.radio_button :photo_url, img %>
+        <%= image_tag img %>
+      </li>
+    <% end %>
+  </ul>
   
 
   <div class="control-group">
-  <%= f.label :Cohort, :class => "control-label" %>
-  <%= f.collection_select :cohort_id, @cohorts, :id, :name, {}, {:class => "controls" } %>
+    <%= f.label :Cohort, :class => "control-label" %>
+    <%= f.collection_select :cohort_id, @cohorts, :id, :name, {}, {:class => "controls" } %>
   </div>
   <div class="control-group">
-  <%= f.label :First_Name, :class => "control-label" %>
-  <%= f.text_field :first_name, :class => "controls"  %> 
-  </div>
-<div class="control-group">
-  <%= f.label :Last_name, :class => "control-label"  %>
-  <%= f.text_field :last_name, :class => "controls" %>
-  </div>
-<div class="control-group">
-  <%= f.label :Email_Address, :class => "control-label" %>
-  <%= f.email_field :email, :class => "controls" %>
-  </div>
-<div class="control-group">
-  <%= f.label :Phone, :class => "control-label" %>
-  <%= f.text_field :phone, :class => "controls" %>
-  </div>
-<div class="control-group">
-  <%= f.label :Job, :class => "control-label" %>
-  <%= f.text_field :job, :class => "controls" %> 
+    <%= f.label :First_Name, :class => "control-label" %>
+    <%= f.text_field :first_name, :class => "controls"  %> 
   </div>
   <div class="control-group">
-  <%= f.label :Location, :class => "control-label" %>
-  <%= f.text_field :city, :class => "controls" %>
+    <%= f.label :Last_name, :class => "control-label"  %>
+    <%= f.text_field :last_name, :class => "controls" %>
   </div>
   <div class="control-group">
-  <%= f.label :Tweet_advice, :class => "control-label" %>
-  <%= f.text_field :advice_tweet, :class => "controls" %>
+    <%= f.label :Email_Address, :class => "control-label" %>
+    <%= f.email_field :email, :class => "controls" %>
   </div>
   <div class="control-group">
-  <%= f.label :Best_places_to_eat_near_DBC, :class => "control-label" %>
-  <%= f.text_field :fav_restaurant, :class => "controls" %>
+    <%= f.label :Phone, :class => "control-label" %>
+    <%= f.text_field :phone, :class => "controls" %>
   </div>
   <div class="control-group">
-  <%= f.label :Github_username, :class => "control-label" %>
-  <%= f.text_field :github_username, :class => "controls" %>
+    <%= f.label :Job, :class => "control-label" %>
+    <%= f.text_field :job, :class => "controls" %> 
   </div>
   <div class="control-group">
-  <%= f.label :Website, :class => "control-label" %>
-  <%= f.text_field :url, :class => "controls" %>
+    <%= f.label :Location, :class => "control-label" %>
+    <%= f.text_field :city, :class => "controls" %>
   </div>
   <div class="control-group">
-  <%= f.label :Blog, :class => "control-label" %>
-  <%= f.text_field :blog, :class => "controls" %>
+    <%= f.label :Tweet_advice, :class => "control-label" %>
+    <%= f.text_field :advice_tweet, :class => "controls" %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Best_places_to_eat_near_DBC, :class => "control-label" %>
+    <%= f.text_field :fav_restaurant, :class => "controls" %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Github_username, :class => "control-label" %>
+    <%= f.text_field :github_username, :class => "controls" %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Website, :class => "control-label" %>
+    <%= f.text_field :url, :class => "controls" %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Blog, :class => "control-label" %>
+    <%= f.text_field :blog, :class => "controls" %>
   </div>
   <div class="control-group">
     <div class="control-label"></div>

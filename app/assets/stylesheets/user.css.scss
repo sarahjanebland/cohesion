@@ -5,3 +5,26 @@
 #user_info {
   list-style: none;
 }
+
+ul.avatars li.avatar {
+  padding: 5px 6px 6px 5px;
+  margin: 5px;
+  border: 1px dashed white;
+  border-radius: 15px;
+  list-style-type: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+ul.avatars li.avatar.selected {
+  border-color: black;
+}
+
+ul.avatars li.avatar input {
+  display: none;
+}
+
+ul.avatars li.avatar img {
+  border-radius: 10px;
+  width: 100px;
+}
