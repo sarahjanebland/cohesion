@@ -1,5 +1,5 @@
 class Cohort < ActiveRecord::Base
-  attr_accessible :name, :start_date, :group_email
+  attr_accessible :name, :start_date, :email
   has_many :users
 
   # validates :name,  presence: true

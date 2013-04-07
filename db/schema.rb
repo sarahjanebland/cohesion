@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(:version => 20130405185751) do
   create_table "cohorts", :force => true do |t|
     t.string   "name"
     t.string   "start_date"
-    t.string   "group_email"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
