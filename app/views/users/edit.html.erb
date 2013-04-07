@@ -65,6 +65,14 @@
     <%= f.text_field :blog, :class => "controls" %>
   </div>
   <div class="control-group">
+    <%= f.label "Facebook", :class => "control-label" %>
+    <%= f.text_field :facebook, :class => "controls", :placeholder => "facebook.com/username" %>
+  </div>
+  <div class="control-group">
+    <%= f.label "Twitter", :class => "control-label" %>
+    <%= f.text_field :twitter, :class => "controls", :placeholder => "twitter.com/username" %>
+  </div>
+  <div class="control-group">
     <div class="control-label"></div>
     <%= f.submit "Update", :class => "controls" %>
   </div>

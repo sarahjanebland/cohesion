@@ -18,6 +18,8 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :uid
       t.string :photo_url
       t.string :github_token
+      t.string :facebook
+      t.string :twitter
 
       t.timestamps
     end

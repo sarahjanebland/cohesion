@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(:version => 20130405185751) do
     t.integer  "uid"
     t.string   "photo_url"
     t.string   "github_token"
+    t.string   "facebook"
+    t.string   "twitter"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end

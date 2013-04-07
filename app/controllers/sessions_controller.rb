@@ -13,8 +13,7 @@ class SessionsController < ApplicationController
                 :location => auth.extra.raw_info.location,
                 :phone => auth.info.phone,
                 :github_token => auth.credentials.token,
-                :blog => auth.extra.raw_info.blog || auth.info.urls['Blog'],
-                :url => auth.extra.raw_info.html_url || auth.info.urls['Github']
+                :blog => auth.extra.raw_info.blog || auth.info.urls['Blog']
                 )
     
     session[:token] = user.session_token = SecureRandom.hex
