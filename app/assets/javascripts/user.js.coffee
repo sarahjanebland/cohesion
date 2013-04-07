@@ -7,3 +7,5 @@ $(document).ready ->
     $('ul.avatars li.avatar').removeClass('selected')
     $(this).addClass('selected')
     $(this).find('input').attr('checked', true)
+    
+    $("select#cohort_cohort_id").change(-> $(this).closest("form").submit())

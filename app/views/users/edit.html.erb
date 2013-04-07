@@ -20,6 +20,8 @@
     </div>
   <% end %>
 
+<div id='update_group'>
+
   <div class="control-group">
     <%= f.label :Cohort, :class => "control-label" %>
     <%= f.collection_select :cohort_id, @cohorts, :id, :name, {}, {:class => "controls" } %>
@@ -76,4 +78,5 @@
     <div class="control-label"></div>
     <%= f.submit "Update", :class => "controls" %>
   </div>
+</div>
 <% end %>

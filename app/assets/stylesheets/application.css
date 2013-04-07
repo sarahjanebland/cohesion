@@ -13,7 +13,7 @@
  */
 
  header {
-  line-height: 80px;
+  line-height: 60px;
  }
 
  header a:hover {
@@ -22,5 +22,14 @@
 
 #top_container {
   margin-top: 70px;
+}
+
+#logo {
+font-size: 36px;
+margin-top: 10px;
+}
+
+#cohort_cohort_id {
+  margin: 0;
 }
 

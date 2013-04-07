@@ -6,6 +6,18 @@
   list-style: none;
 }
 
+ul.avatars {
+  width: 400px;
+  float: right;
+  margin-top: 0px;
+}
+
+#update_group {
+  width: 500px;
+  float: left;
+  margin-top: 15px;
+}
+
 ul.avatars li.avatar {
   padding: 5px 6px 6px 5px;
   margin: 5px;
