@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
   end
 
   def format_urls
-    self.facebook = self.facebook.gsub(/.*\//, '')
-    self.twitter = self.twitter.gsub(/.*\//, '')
+    self.facebook = self.facebook.gsub(/.*\//, '') if self.facebook
+
+    self.twitter = self.twitter.gsub(/.*\//, '') if self.twitter
   end
 end
