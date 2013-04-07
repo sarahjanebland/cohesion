@@ -3,14 +3,18 @@
     <div class="container">
       <%= link_to "PhaseBoot", root_path, id: "logo", class: "pull-left" %>
       <nav class="pull-right">
-        <ul class="nav">
-          <% if current_user %>
+        <form class="navbar-search pull-left">
+            <%= select :cohort, :cohort_id, Cohort.all.map{|cohort|[cohort.name, cohort.id]} %>
+            <input type="text" class="search-query" placeholder="Search by name">
+          </form>
+          <ul class="nav">
+            <% if current_user %>
 
-          <li><%= link_to "Create Profile", edit_user_path(current_user.id) %></li>
-          <li><%= link_to "Sign Out", signout_path %></li>
-          <% else %>
-          <li><%= link_to "Sign in with Github!", "/auth/github" %></li>
-          <% end %>
+            <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+            <li><%= link_to "Sign Out", signout_path %></li>
+            <% else %>
+            <li><%= link_to "Sign in with Github!", "/auth/github" %></li>
+            <% end %>
         </ul>
       </nav>
     </div>

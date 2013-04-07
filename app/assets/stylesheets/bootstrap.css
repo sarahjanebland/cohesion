@@ -103,7 +103,8 @@ img {
   height: auto;
   max-width: 100%;
   vertical-align: middle;
-  border: 0;
+  border: 8px solid #fff;
+  box-shadow: 3px 3px 7px #000;
   -ms-interpolation-mode: bicubic;
 }
 
@@ -226,18 +227,20 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
-  color: #333333;
+  color: #ccc;
   background-color: #ffffff;
+  background-image:url('../cartographer.png');
+  background-repeat:repeat;
 }
 
 a {
-  color: #0088cc;
+  color: rgb(124, 211, 255);
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #005580;
+  color: rgb(52, 187, 255);
   text-decoration: underline;
 }
 
@@ -812,7 +815,7 @@ h4 small {
 ul,
 ol {
   padding: 0;
-  margin: 0 0 10px 25px;
+  margin: 20 0 10px 0px;
 }
 
 ul ul,
@@ -823,7 +826,7 @@ ol ul {
 }
 
 li {
-  line-height: 20px;
+  line-height: 27px;
 }
 
 ul.unstyled,
@@ -4589,7 +4592,8 @@ input[type="submit"].btn.btn-mini {
   left: 0;
   display: block;
   float: left;
-  margin: 0 10px 0 0;
+  
+  line-height: 80px;
 }
 
 .navbar .nav.pull-right {

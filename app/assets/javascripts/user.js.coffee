@@ -6,4 +6,4 @@ $(document).ready ->
   $('ul.avatars li.avatar').bind 'click', (e) ->
     $('ul.avatars li.avatar').removeClass('selected')
     $(this).addClass('selected')
-    $(this).find('input').attr('checked', true);
+    $(this).find('input').attr('checked', true)

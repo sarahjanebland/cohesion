@@ -9,7 +9,7 @@
 ul.avatars li.avatar {
   padding: 5px 6px 6px 5px;
   margin: 5px;
-  border: 1px dashed white;
+  border: 3px dashed transparent;
   border-radius: 15px;
   list-style-type: none;
   display: inline-block;
@@ -17,14 +17,34 @@ ul.avatars li.avatar {
 }
 
 ul.avatars li.avatar.selected {
-  border-color: black;
+  border-color: orange;
+  border: 3px dashed orange;
 }
 
 ul.avatars li.avatar input {
-  display: none;
+  display: inline-block;
 }
 
 ul.avatars li.avatar img {
   border-radius: 10px;
   width: 100px;
+  border: none;
+  box-shadow: none;
+}
+
+.welcome {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.profile_label {
+  display: inline;
+  color: #666;
+}
+
+.controls img {
+  margin-left: 20px;
 }

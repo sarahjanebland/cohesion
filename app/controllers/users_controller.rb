@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  def index 
+  def index
     @users = User.all
     @avatars = avatars
   end

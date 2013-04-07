@@ -1,8 +1,7 @@
-<h1>Edit your Profile!</h1>
 
 
-<h3>Edit your Profile </h3>
 <%= form_for @user, :html => {:class => "form-horizontal"} do |f| %>
+  <div class="welcome">Welcome, <%= @user.first_name %>!</div>
 
   <% unless @user.photo_url %>
     <ul class="avatars">
@@ -15,7 +14,10 @@
       <% end %>
     </ul>
   <% else %>
-    <%= image_tag avatar(@user.photo_url, @avatars) %>
+    <div class="control-group">
+      <div class="control-label"></div>
+      <div class="controls"><%= image_tag avatar(@user.photo_url, @avatars) %></div>
+    </div>
   <% end %>
 
   <div class="control-group">
