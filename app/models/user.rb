@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
 
   belongs_to :cohort
 
+  searchable do
+    text :first_name, :last_name, :nickname
+  end
+
   def format_urls
     self.facebook = self.facebook.gsub(/.*\//, '')
     self.twitter = self.twitter.gsub(/.*\//, '')

@@ -32,6 +32,14 @@ class UsersController < ApplicationController
     reset_session
   end
 
+  def query
+    search = User.search do
+      fulltext params[:phrase]
+    end
+    p search.results
+    render json: search.results
+  end
+
   private
 
   def avatars

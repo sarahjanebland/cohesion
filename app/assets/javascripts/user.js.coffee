@@ -8,4 +8,13 @@ $(document).ready ->
     $(this).addClass('selected')
     $(this).find('input').attr('checked', true)
     
-    $("select#cohort_cohort_id").change(-> $(this).closest("form").submit())
+  $("select#cohort_cohort_id").change(-> $(this).closest("form").submit())
+
+  $('input.search-query').bind 'keyup', (e) ->
+    phrase = $(this).val()
+    $.ajax
+      url: '/search'
+      type: 'POST'
+      data: {phrase: phrase}
+      complete: (data, status, xhr) ->
+        console.log(data.responseText)
