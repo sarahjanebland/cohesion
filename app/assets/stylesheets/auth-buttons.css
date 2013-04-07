@@ -11,7 +11,7 @@
 .btn-auth {
     position: relative;
     display: inline-block;
-    /*height: 10px;
+    height: 10px;
     padding: 0 1em;*/
     border: 1px solid #999;
     border-radius: 2px;
@@ -124,9 +124,11 @@
 /* GitHub
    ========================================================================== */
 
-.btn-github {
+.btn-github:hover,
+.btn-github:focus {
     border-color: #d4d4d4;
     background: #ececec;
+    color: #333 !important;
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
     background-image: -webkit-linear-gradient(#f4f4f4, #ececec);
     background-image: -moz-linear-gradient(#f4f4f4, #ececec);
@@ -135,11 +137,10 @@
     background-image: linear-gradient(#f4f4f4, #ececec);
 }
 
-.btn-github:hover,
-.btn-github:focus {
+.btn-github {
     border-color: #518cc6;
     border-bottom-color: #2a65a0;
-    color: #fff;
+    color: #fff !important;
     background-color: #599bdc;
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#599bdc), to(#3072b3));
     background-image: -webkit-linear-gradient(#599bdc, #3072b3);
@@ -174,7 +175,7 @@
 .btn-github:hover:before,
 .btn-github:focus:before,
 .btn-github:active:before {
-    background-position: -66px -4px;
+    background-position: -44px -4px;
 }
 
 .btn-github.large:before {
