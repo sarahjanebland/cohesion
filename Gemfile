@@ -13,8 +13,8 @@ gem 'omniauth-github'
 gem 'bootstrap-sass'
 gem 'nokogiri'
 
-
-gem 'nokogiri'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 
 # Gems used only for assets and not required
