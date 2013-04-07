@@ -17,4 +17,7 @@
   <li><div class="profile_label">Blog:</div> <%= link_to @user.blog, "http://#{@user.blog}" %></li>
   <li><div class="profile_label">Tweet Advice:</div> &ldquo;<%= @user.advice_tweet %>&rdquo;</li>
   <li><div class="profile_label">Favorite Restaurant:</div> <%= @user.fav_restaurant %></li>
+  <li><div class="profile_label">Github Profile:</div> <%= link_to @user.nickname, "http://github.com/#{@user.nickname}" %></li>
+  <li><div class="profile_label">Facebook Profile:</div> <%= link_to @user.facebook, "http://facebook.com/#{@user.facebook}" %></li>
+  <li><div class="profile_label">Twitter Profile:</div> <%= link_to "@#{@user.twitter}", "http://twitter.com/#{@user.twitter}" %></li>
 </div>
