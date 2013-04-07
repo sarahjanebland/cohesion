@@ -4,5 +4,12 @@ class User < ActiveRecord::Base
                   :cohort_id, :photo_url, :uid, :provider, :github_token,
                   :facebook, :twitter
 
+  before_save :format_urls
+
   belongs_to :cohort
+
+  def format_urls
+    self.facebook = self.facebook.gsub(/.*\//, '')
+    self.twitter = self.twitter.gsub(/.*\//, '')
+  end
 end
