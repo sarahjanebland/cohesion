@@ -4,16 +4,19 @@
 <h3>Edit your Profile </h3>
 <%= form_for @user, :html => {:class => "form-horizontal"} do |f| %>
 
-  <ul class="avatars">
-    <% @avatars.each do |img| %>
-      <% select = img.include?(@user.first_name.downcase) %>
-      <li class="avatar <%= select ? 'selected' : '' %>">
-        <%= f.radio_button :photo_url, img, :checked => select  %>
-        <%= image_tag img %>
-      </li>
-    <% end %>
-  </ul>
-  
+  <% unless @user.photo_url %>
+    <ul class="avatars">
+      <% @avatars.each do |img| %>
+        <% select = img.include?(@user.first_name.downcase) %>
+        <li class="avatar <%= select ? 'selected' : '' %>">
+          <%= f.radio_button :photo_url, img, :checked => select  %>
+          <%= image_tag img %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <%= image_tag avatar(@user.photo_url, @avatars) %>
+  <% end %>
 
   <div class="control-group">
     <%= f.label :Cohort, :class => "control-label" %>
