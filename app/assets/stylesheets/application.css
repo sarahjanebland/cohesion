@@ -13,7 +13,7 @@
  */
 
  header {
-  line-height: 60px;
+  line-height: 120px;
  }
 
  header a:hover {
@@ -33,3 +33,12 @@ margin-top: 10px;
   margin: 0;
 }
 
+.logo {
+	border: none;
+	box-shadow: none;
+	margin-left: -13px;
+}
+
+.profile_img {
+	padding-top: 25px;
+}

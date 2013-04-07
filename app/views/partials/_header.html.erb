@@ -1,7 +1,7 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "PhaseBoot", root_path, id: "logo", class: "pull-left" %>
+      <a href="/"><img src="../../phaseboot_logo.png" class="logo"></a>
       <nav class="pull-right">
         <form class="navbar-search pull-left">
             <%= select :cohort, :cohort_id, Cohort.all.map{|cohort|[cohort.name, cohort.id]} %>
