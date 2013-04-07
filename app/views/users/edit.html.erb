@@ -6,10 +6,10 @@
   <% unless @user.photo_url %>
     <ul class="avatars">
       <% @avatars.each do |img| %>
-        <% select = img.include?(@user.first_name.downcase) %>
-        <li class="avatar <%= select ? 'selected' : '' %>">
-          <%= f.radio_button :photo_url, img, :checked => select  %>
-          <%= image_tag img %>
+        <% select = img[:src].include?(@user.first_name.downcase) %>
+        <li class="avatar <%= select ? 'selected' : '' %> <%= "cohort_#{img[:id]}" %>">
+          <%= f.radio_button :photo_url, img[:src], :checked => select  %>
+          <%= image_tag img[:src] %>
         </li>
       <% end %>
     </ul>
@@ -23,8 +23,8 @@
 <div id='update_group'>
 
   <div class="control-group">
-    <%= f.label :Cohort, :class => "control-label" %>
-    <%= f.collection_select :cohort_id, @cohorts, :id, :name, {}, {:class => "controls" } %>
+    <%= f.label :Select_your_Cohort, :class => "control-label" %>
+    <%= f.collection_select :cohort_id, @cohorts, :id, :name, {}, {:class => "controls cohort_img" }%>
   </div>
   <div class="control-group">
     <%= f.label :First_Name, :class => "control-label" %>

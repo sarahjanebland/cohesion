@@ -43,15 +43,15 @@ class UsersController < ApplicationController
   private
 
   def avatars
-    doc = Nokogiri::HTML(open('https://www.dropbox.com/sh/unxdinxldakcyc8/2_BhxGIPPw/gravatars'))
-    doc.css("ol#gallery-view-media li img").map { |li| li['data-src'] }
+    imgs = []
+    
+    Cohort.all.each do |cohort|
+      if cohort.dropbox_url
+        doc = Nokogiri::HTML(open(cohort.dropbox_url))
+        imgs << doc.css("ol#gallery-view-media li img").map { |li| {src: li['data-src'], id: cohort.id} }
+      end
+    end
 
-    doc1 = Nokogiri::HTML(open('https://www.dropbox.com/sh/unxdinxldakcyc8/2_BhxGIPPw/gravatars'))
-    doc1.css("ol#gallery-view-media li img").map { |li| li['data-src'] }
+    imgs.flatten
   end
-
-  # def avatars2
-  #   doc = Nokogiri::HTML(open('https://www.dropbox.com/sh/unxdinxldakcyc8/2_BhxGIPPw/gravatars'))
-  #   doc.css("ol#gallery-view-media li img").map { |li| li['data-src'] }
-  # end
 end
