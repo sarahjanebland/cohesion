@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @users = User.all(:conditions => "photo_url != ''")
     @avatars = avatars
   end
 
