@@ -2,13 +2,49 @@
 <h3>
   Banana Slugs
 </h3>
-
-<%if current_user %>
-<% @users.each do |user| %>
-  <%= link_to image_tag(avatar(user.photo_url, @avatars)), "/users/#{user.id}" %>  
+<div id='index_pics'>
+<%unless current_user %>
+<% @slugs.each do |slug| %>
+  <% if slug.photo_url %>
+      <%= image_tag slug.photo_url {}, {:class => 'tiny_pics'}%>
+    <% end %> 
   <% end %>
-
 <% end %>
 </div>
 
-<!-- unless current_user.photo_url -->
+<h3>
+  Golden Bears
+</h3>
+<div id='small_pics'>
+<%unless current_user %>
+<% @bears.each do |bear| %>
+  <% if bear.photo_url %>
+      <%= image_tag bear.photo_url %>
+    <% end %> 
+  <% end %>
+<% end %>
+</div>
+
+<h3>
+  Fiery Skippers
+</h3>
+<div id='small_pics'>
+<%unless current_user %>
+<% @skippers.each do |skipper| %>
+  <% if skipper.photo_url %>
+      <%= image_tag skipper.photo_url %>
+    <% end %> 
+  <% end %>
+<% end %>
+</div>
+
+<!-- for logged in users -->
+
+<%if current_user %>
+  <% @existing_users.each do |user| %>
+    <% if user.photo_url %>
+      <%= link_to (image_tag user.photo_url), "/users/#{user.id}" %>
+    <% end %> 
+  <% end %>
+<% end %>
+</div>

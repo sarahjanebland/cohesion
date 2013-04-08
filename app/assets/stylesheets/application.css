@@ -12,33 +12,4 @@
  *= require_tree .
  */
 
- header {
-  line-height: 120px;
- }
-
- header a:hover {
-  text-decoration: none;
- }
-
-#top_container {
-  margin-top: 70px;
-}
-
-#logo {
-font-size: 36px;
-margin-top: 10px;
-}
-
-#cohort_cohort_id {
-  margin: 0;
-}
-
-.logo {
-	border: none;
-	box-shadow: none;
-	margin-left: -13px;
-}
-
-.profile_img {
-	padding-top: 25px;
-}
+ 

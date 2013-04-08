@@ -16,7 +16,7 @@
   <% else %>
     <div class="control-group">
       <div class="control-label"></div>
-      <div class="controls"><%= image_tag avatar(@user.photo_url, @avatars) %></div>
+      <div class="controls"><%= image_tag @user.photo_url %></div>
     </div>
   <% end %>
 

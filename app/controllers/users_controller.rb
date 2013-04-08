@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all(:conditions => "photo_url != ''")
+    @existing_users = User.all(:conditions => "photo_url != ''")
+    @slugs = User.all(:conditions => "cohort_id = 6")
+    @bears = User.all(:conditions => "cohort_id = 7")
+    @skippers = User.all(:conditions => "cohort_id = 8")
     @avatars = avatars
   end
 

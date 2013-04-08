@@ -13,9 +13,6 @@ gem 'omniauth-github'
 gem 'bootstrap-sass'
 gem 'nokogiri'
 
-gem 'sunspot_rails'
-gem 'sunspot_solr'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
