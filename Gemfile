@@ -29,7 +29,7 @@ end
 gem 'jquery-rails'
 
 group :test, :development do
-
+  gem 'shoulda-matchers'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'better_errors'
