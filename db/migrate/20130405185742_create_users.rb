@@ -20,6 +20,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :provider
       t.string :facebook_url
       t.string :twitter_url
+      t.string :github_url
 
       t.timestamps
     end
