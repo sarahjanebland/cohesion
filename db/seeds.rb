@@ -10,7 +10,7 @@ Cohort.delete_all
 
 [
 {name: 'Sea Lions', start_date: DateTime.new(2013, 01, 28), 
-  email: 'lions@devbootcamp.com', photos_url: nil},
+  email: 'lions@devbootcamp.com', photos_url: "https://www.dropbox.com/sh/ewwqlhbkzbusxn2/3kDbRe3Ekc"},
 {name: 'Banana Slugs', start_date: DateTime.new(2013, 02, 18), 
   email: 'slugs@devbootcamp.com', photos_url: 'https://www.dropbox.com/sh/unxdinxldakcyc8/2_BhxGIPPw/gravatars'},
 {name: 'Golden Bears', start_date: DateTime.new(2013, 03, 11), 
