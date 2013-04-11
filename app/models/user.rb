@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :nickname, :phone, 
-                  :company, :location, :advice, :fav_restaurant, :url, :blog, 
+                  :company, :location, :advice, :restaurant, :url, :blog, 
                   :cohort_id, :photo_url, :github_uid, :provider, :github_token,
                   :facebook, :twitter
 
