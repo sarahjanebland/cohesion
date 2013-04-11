@@ -14,10 +14,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :location
       t.string :advice
       t.string :restaurant
-      t.string :url
-      t.string :blog
-      t.string :provider
       t.string :photo_url
+      t.string :website_url
+      t.string :blog_url
+      t.string :provider
       t.string :facebook
       t.string :twitter
 
