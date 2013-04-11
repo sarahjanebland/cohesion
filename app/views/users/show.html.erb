@@ -11,7 +11,7 @@
   <li><div class="profile_label">Email:</div> <%= mail_to "#{@user.email}" %></li>
   <li><div class="profile_label">Phone #:</div> <%= phone_number_link(@user.phone) %></li>
   <li><div class="profile_label">Find me on Github:</div> <%= @user.nickname %></li>
-  <li><div class="profile_label">Current job:</div> <%= @user.job %></li>
+  <li><div class="profile_label">Current company:</div> <%= @user.company %></li>
   <li><div class="profile_label">Current city:</div> <%= @user.location %></li>
   <li><div class="profile_label">Website:</div> <%= link_to @user.url, "http://#{@user.url}" %></li>
   <li><div class="profile_label">Blog:</div> <%= link_to @user.blog, "http://#{@user.blog}" %></li>
