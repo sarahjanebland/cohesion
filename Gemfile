@@ -34,6 +34,11 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'guard-rspec'
+  gem 'capybara', '1.1.2'
+  gem 'rb-fsevent', '~> 0.9'
+  gem 'guard-spork'
+  gem 'spork'
 end
 
 # To use ActiveModel has_secure_password
