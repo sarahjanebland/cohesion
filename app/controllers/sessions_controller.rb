@@ -2,7 +2,8 @@ class SessionsController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
-    p auth
+    p auth.info.url
+    p auth.extra.raw_info
     user = User.find_or_create_by_github_uid(
                 :github_uid => auth.uid,
                 :provider => auth.provider,
@@ -12,13 +13,19 @@ class SessionsController < ApplicationController
                 :last_name => auth.info.last_name || auth.info.name.split(' ').last,
                 :location => auth.extra.raw_info.location,
                 :phone => auth.info.phone,
+                :company => auth.extra.raw_info.company,
                 :github_token => auth.credentials.token,
-                :blog => auth.extra.raw_info.blog || auth.info.urls['Blog']
+                :blog_url => auth.extra.raw_info.blog || auth.info.urls['Blog']
                 )
     
     session[:token] = user.session_token = SecureRandom.hex
+
     if user.save
-      redirect_to root_url, :notice => "Signed in!"
+      if user.photo_url
+        redirect_to user_path(user), :notice => "Signed in!"
+      else
+        redirect_to edit_user_path(user)
+      end
     else
       redirect_to :back, :notice => "Please try again!"
     end

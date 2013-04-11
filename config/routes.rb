@@ -2,7 +2,7 @@ Phaseboot::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
-  root to: "users#index"
+  root to: "pages#index"
 
   get '/auth/:provider/callback', to: 'sessions#create'
   post '/search' => 'users#query'

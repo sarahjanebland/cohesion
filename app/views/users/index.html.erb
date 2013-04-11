@@ -1,53 +1,6 @@
 <div id='home_page_header'> 
 
-
-@avatars.each
-
-<%unless current_user %>
-  <h3>
-    Banana Slugs
-  </h3>
-  <div id='index_pics'>
-
-  <% @slugs.each do |slug| %>
-    <% if slug.photo_url %>
-        <%= image_tag slug.photo_url {}, {:class => 'tiny_pics'} %>
-      <% end %> 
-    <% end %>
-
-  </div>
-
-  <h3>
-    Golden Bears
-  </h3>
-  <div id='small_pics'>
-
-  <% @bears.each do |bear| %>
-    <% if bear.photo_url %>
-        <%= image_tag bear.photo_url {}, {:class => 'tiny_pics'} %>
-      <% end %> 
-    <% end %>
-
-  </div>
-
-  <h3>
-    Fiery Skippers
-  </h3>
-  <div id='small_pics'>
-
-  <% @skippers.each do |skipper| %>
-    <% if skipper.photo_url %>
-        <%= image_tag skipper.photo_url {}, {:class => 'tiny_pics'} %>
-      <% end %> 
-    <% end %>
-
-  </div>
-<% end %>
-<!-- for logged in users -->
-
 <%if current_user %>
-
-
   <% @existing_users.each do |user| %>
     <% if user.photo_url %>
       <%= link_to (image_tag user.photo_url), "/users/#{user.id}" %>

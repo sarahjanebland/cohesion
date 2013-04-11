@@ -29,7 +29,7 @@ end
 gem 'jquery-rails'
 
 group :test, :development do
-  gem 'shoulda-matchers'
+  
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'better_errors'
@@ -39,6 +39,7 @@ group :test, :development do
   gem 'rb-fsevent', '~> 0.9'
   gem 'guard-spork'
   gem 'spork'
+  gem 'shoulda-matchers', :require => false
 end
 
 # To use ActiveModel has_secure_password

@@ -15,3 +15,4 @@ class Cohort < ActiveRecord::Base
   	self.secret_url = SecureRandom.hex(6)
   end
 end
+
