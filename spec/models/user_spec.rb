@@ -19,7 +19,6 @@ describe User do
 	it { should allow_mass_assignment_of(:github_token) }
 	it { should allow_mass_assignment_of(:facebook_url) }
 	it { should allow_mass_assignment_of(:twitter_url) }
-	it { should allow_mass_assignment_of(:github_url) }
   it { should belong_to(:cohort) }
 
 
