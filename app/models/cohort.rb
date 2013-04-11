@@ -9,10 +9,14 @@ class Cohort < ActiveRecord::Base
   validates :email,  presence: true
 
   before_create :generate_secret_url
-  # after_save CohortMailer.signup_email(cohort).deliver
+  after_save :send_welcome_email
 
   def generate_secret_url
   	self.secret_url = SecureRandom.hex(6)
   end
-end
 
+  def send_welcome_email
+  	@cohort = Cohort.find(self)
+  	CohortMailer.signup_email(@cohort).deliver
+  end
+end
