@@ -18,8 +18,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :website_url
       t.string :blog_url
       t.string :provider
-      t.string :facebook
-      t.string :twitter
+      t.string :facebook_url
+      t.string :twitter_url
 
       t.timestamps
     end
