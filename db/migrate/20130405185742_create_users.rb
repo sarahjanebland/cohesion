@@ -12,7 +12,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :phone
       t.string :company
       t.string :location
-      t.string :advice_tweet
+      t.string :advice
       t.string :fav_restaurant
       t.string :url
       t.string :blog
