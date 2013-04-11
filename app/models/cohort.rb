@@ -4,5 +4,5 @@ class Cohort < ActiveRecord::Base
 
   validates :name,  presence: true
   validates :start_date,  presence: true
-  validates :group_email,  presence: true
+  validates :email,  presence: true
 end

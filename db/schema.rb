@@ -24,26 +24,27 @@ ActiveRecord::Schema.define(:version => 20130407232611) do
 
   create_table "users", :force => true do |t|
     t.integer  "cohort_id"
+    t.integer  "github_uid"
+    t.string   "github_token"
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "nickname"
     t.string   "email"
     t.string   "session_token"
     t.string   "phone"
-    t.string   "job"
+    t.string   "company"
     t.string   "location"
-    t.string   "advice_tweet"
-    t.string   "fav_restaurant"
-    t.string   "nickname"
-    t.string   "url"
-    t.string   "blog"
-    t.string   "provider"
-    t.integer  "uid"
+    t.string   "advice"
+    t.string   "restaurant"
     t.string   "photo_url"
-    t.string   "github_token"
-    t.string   "facebook"
-    t.string   "twitter"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.string   "website_url"
+    t.string   "blog_url"
+    t.string   "provider"
+    t.string   "facebook_url"
+    t.string   "twitter_url"
+    t.string   "github_url"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end
