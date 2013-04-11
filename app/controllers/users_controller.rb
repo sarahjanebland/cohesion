@@ -49,8 +49,8 @@ class UsersController < ApplicationController
     imgs = []
     
     Cohort.all.each do |cohort|
-      if cohort.dropbox_url
-        doc = Nokogiri::HTML(open(cohort.dropbox_url))
+      if cohort.photos_url
+        doc = Nokogiri::HTML(open(cohort.photos_url))
         imgs << doc.css("ol#gallery-view-media li img").map { |li| {src: li['data-src'], id: cohort.id} }
       end
     end

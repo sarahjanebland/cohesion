@@ -4,6 +4,9 @@ class CreateCohorts < ActiveRecord::Migration
       t.string :name
       t.string :start_date
       t.string :email
+      t.string :photos_url
+      t.string :secret_url
+      
       t.timestamps
     end
   end
