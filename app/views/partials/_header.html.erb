@@ -3,10 +3,6 @@
     <div class="container">
       <a href="/"><img src="../../phaseboot_logo.png" class="logo"></a>
       <nav class="pull-right">
-        <form class="navbar-search pull-left">
-            <%= select :cohort, :cohort_id, Cohort.all.map{|cohort|[cohort.name, cohort.id]} %>
-            <input type="text" class="search-query" placeholder="Search by name">
-          </form>
           <ul class="nav">
             <% if current_user %>
 
