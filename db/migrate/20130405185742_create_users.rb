@@ -2,6 +2,7 @@ class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.integer :cohort_id
+      t.integer :github_uid
       t.string :first_name
       t.string :last_name
       t.string :email
@@ -15,7 +16,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :url
       t.string :blog
       t.string :provider
-      t.integer :uid
       t.string :photo_url
       t.string :github_token
       t.string :facebook

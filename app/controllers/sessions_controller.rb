@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
   def create
     auth = request.env["omniauth.auth"]
     p auth
-    user = User.find_or_create_by_uid(
-                :uid => auth.uid,
+    user = User.find_or_create_by_github_uid(
+                :github_uid => auth.uid,
                 :provider => auth.provider,
                 :email => auth.info.email,
                 :nickname => auth.info.nickname,
