@@ -17,8 +17,13 @@ class SessionsController < ApplicationController
                 )
     
     session[:token] = user.session_token = SecureRandom.hex
+
     if user.save
-      redirect_to root_url, :notice => "Signed in!"
+      if user.photo_url
+        redirect_to user_path(user), :notice => "Signed in!"
+      else
+        redirect_to edit_user_path(user)
+      end
     else
       redirect_to :back, :notice => "Please try again!"
     end
