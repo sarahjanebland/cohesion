@@ -29,15 +29,4 @@ describe Cohort do
     Cohort.current.should include(cohort)
     Cohort.current.should_not include(old_cohort)
   end
-
-  it { should validate_presence_of(:photos_url) }
-  it { should have_many(:users)}
-
-	it 'should have 12 char long secret_url before save' do
-		cohort.save!
-		cohort.secret_url.length.should eq 12
-	end
-
-	it 'should ' do
-	end
 end
