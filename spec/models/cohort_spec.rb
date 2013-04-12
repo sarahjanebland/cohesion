@@ -20,9 +20,4 @@ describe Cohort do
 		cohort.secret_url = "dfdsll34kfds"
 		cohort.should be_valid
 	end
-
-	it "should not have secret_urls any other length" do
-		cohort.secret_url = '2j2j2'
-		cohort.should_not be_valid
-	end
 end

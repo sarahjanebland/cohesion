@@ -1,12 +1,13 @@
 require 'securerandom'
 
 class Cohort < ActiveRecord::Base
-  attr_accessible :name, :start_date, :email, :photos_url
+  attr_accessible :name, :start_date, :email, :photos_url, :dropbox_url
   has_many :users
 
   validates :name,  presence: true
   validates :start_date,  presence: true
   validates :email,  presence: true
+  validates :secret_url,  presence: true
 
   before_create :generate_secret_url
   after_save :send_welcome_email
