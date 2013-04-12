@@ -1,7 +1,7 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
-<<<<<<< HEAD
+
 require 'active_support/core_ext'
 
 
