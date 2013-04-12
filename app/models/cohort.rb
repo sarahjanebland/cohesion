@@ -17,7 +17,6 @@ class Cohort < ActiveRecord::Base
   end
 
   def send_welcome_email
-  	@cohort = Cohort.find(self)
-  	CohortMailer.signup_email(@cohort).deliver
+  	CohortMailer.signup_email(self).deliver
   end
 end
