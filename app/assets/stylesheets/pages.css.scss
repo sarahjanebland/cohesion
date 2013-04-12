@@ -1,3 +1,30 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Home page */
+
+.name_img_span {
+  width: 200px;
+  float: none;
+  margin: 100px auto;
+
+  h4 {
+    text-align: center;
+  }
+
+  img {
+    width: 185px;
+  }
+
+  p {
+    margin-top: 5px;
+    text-align: justify;
+    font-style: italic;
+    color: #999;
+  }
+
+  p:before, p:after {
+    content: '"';
+  }
+}
