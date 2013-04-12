@@ -19,10 +19,20 @@ describe User do
 	it { should allow_mass_assignment_of(:github_token) }
 	it { should allow_mass_assignment_of(:facebook_url) }
 	it { should allow_mass_assignment_of(:twitter_url) }
+  
+  it { should validate_presence_of :cohort_id }
+  it { should validate_presence_of :github_uid }
+  it { should validate_presence_of :github_token }
+  
+  it { should validate_uniqueness_of :github_uid }
+  
   it { should belong_to(:cohort) }
 
-
-  let(:user) { User.new }
+  let(:user) { create(:user) }
+  
+  it "should not allow invalid emails" do
+    build(:user, email: "asdf@asdf.c").should_not be_valid
+  end
 
   describe "#format_urls" do
   	it "gives me just the twitter username" do
@@ -37,6 +47,5 @@ describe User do
   		user.facebook_url.should eq("juliantai")
   	end
   end
-
 
 end

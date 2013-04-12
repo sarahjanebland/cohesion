@@ -3,6 +3,11 @@ class User < ActiveRecord::Base
                   :company, :location, :advice, :restaurant, :website_url, :blog_url, 
                   :cohort_id, :photo_url, :github_uid, :provider, :github_token,
                   :facebook_url, :twitter_url
+                  
+  validates :cohort_id, presence: true
+  validates :github_uid, presence: true, uniqueness: true
+  validates :github_token, presence: true
+  validates :email, format: {with: /[\w\-\.]+@[\w\-\.]+\.[\w]{2,7}/i}
 
   before_save :format_urls
 

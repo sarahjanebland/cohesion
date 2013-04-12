@@ -22,9 +22,6 @@ describe Cohort do
   it { should have_many(:users)}
   
   it "should not allow invalid emails" do
-    build(:cohort, email: "@asdf.com").should_not be_valid
-    build(:cohort, email: "asdf.com").should_not be_valid
-    build(:cohort, email: "asdf@.com").should_not be_valid
     build(:cohort, email: "asdf@asdf.c").should_not be_valid
   end
   
