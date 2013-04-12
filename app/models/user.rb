@@ -28,4 +28,8 @@ class User < ActiveRecord::Base
   def self.wise
     pictured.select{|user| user.advice }
   end
+
+  def self.featured
+    wise.sample
+  end
 end
