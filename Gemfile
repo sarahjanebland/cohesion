@@ -15,6 +15,7 @@ gem 'nokogiri'
 
 gem 'forem', :git => "git://github.com/radar/forem.git"
 gem 'kaminari', '0.13.0'
+gem 'forem-postgres-search', :git => "git://github.com/jgadbois/forem-postgres-search.git"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
