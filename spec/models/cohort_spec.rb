@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe Cohort do
 
-	let(:cohort) { FactoryGirl.create(:cohort) }
-
-	subject { cohort }
+	let(:cohort) { create(:cohort) }
 
   it { should allow_mass_assignment_of(:name) }
   it { should allow_mass_assignment_of(:start_date) }
