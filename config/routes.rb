@@ -1,6 +1,8 @@
 Phaseboot::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :access, only: [:show]
+  resources :cohorts
 
   root to: "pages#index"
 

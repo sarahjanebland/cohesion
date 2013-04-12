@@ -3,7 +3,7 @@ class CohortMailer < ActionMailer::Base
 
   def signup_email(cohort)
   	link = cohort.secret_url
-  	@url 	=	"http://bootconnect.com/#{link}"
+  	@url 	=	"http://bootconnect.com/access/#{link}"
   	mail(to: cohort.email, subject: "Welcome to BootConnect!")
   end
 end
