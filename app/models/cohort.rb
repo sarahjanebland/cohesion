@@ -11,6 +11,8 @@ class Cohort < ActiveRecord::Base
   before_create :generate_secret_url
   after_save :send_welcome_email
 
+  scope :current, lambda { where("start_date > ?", 12.weeks.ago) }
+
   def generate_secret_url
   	self.secret_url = SecureRandom.hex(6)
   end

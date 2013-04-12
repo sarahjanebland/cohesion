@@ -16,4 +16,16 @@ class User < ActiveRecord::Base
     self.facebook_url = self.facebook_url.gsub(/.*\//, '') if self.facebook_url
     self.twitter_url = self.twitter_url.gsub(/.*\//, '') if self.twitter_url
   end
+
+  def self.current
+    Cohort.includes(:users).current.map { |cohort| cohort.users }.flatten
+  end
+
+  def self.pictured
+    current.select{|user| user.photo_url }
+  end
+
+  def self.wise
+    pictured.select{|user| user.advice }
+  end
 end
