@@ -1,5 +1,3 @@
-require 'securerandom'
-
 class Cohort < ActiveRecord::Base
   attr_accessible :name, :start_date, :email, :photos_url
   has_many :users
@@ -7,9 +5,9 @@ class Cohort < ActiveRecord::Base
   validates :name,  presence: true, uniqueness: true
   validates :start_date,  presence: true, uniqueness: true
   validates :email,  presence: true, uniqueness: true, format: { with: /[\w\-\.]+@[\w\-\.]+\.[a-z]{2,7}/i }
-  validates :secret_url, presence: true, length: {in: 6..12}, uniqueness: true
+  validates :secret_url, presence: true, length: {in: 6..20}, uniqueness: true
 
-  before_create :generate_secret_url
+  before_validation :generate_secret_url
   after_save :send_welcome_email
 
   scope :current, lambda { where("start_date > ?", 12.weeks.ago) }
@@ -19,6 +17,6 @@ class Cohort < ActiveRecord::Base
   end
 
   def send_welcome_email
-  	CohortMailer.signup_email(self).deliver
+    CohortMailer.signup_email(self).deliver
   end
 end

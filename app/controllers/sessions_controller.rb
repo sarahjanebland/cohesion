@@ -2,32 +2,36 @@ class SessionsController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
-    p auth.info.url
-    p auth.extra.raw_info
-    user = User.find_or_create_by_github_uid(
-                :github_uid => auth.uid,
-                :provider => auth.provider,
-                :email => auth.info.email,
-                :nickname => auth.info.nickname,
-                :first_name => auth.info.first_name || auth.info.name.split(' ').first,
-                :last_name => auth.info.last_name || auth.info.name.split(' ').last,
-                :location => auth.extra.raw_info.location,
-                :phone => auth.info.phone,
-                :company => auth.extra.raw_info.company,
-                :github_token => auth.credentials.token,
-                :blog_url => auth.extra.raw_info.blog || auth.info.urls['Blog']
-                )
+        
+    if session[:auth_secret]
+      cohort = Cohort.find_by_secret_url(session[:auth_secret])
+      if cohort
+        user = User.find_or_create_by_github_uid(
+                    :github_uid => auth.uid,
+                    :provider => auth.provider,
+                    :cohort => cohort,
+                    :email => auth.info.email,
+                    :nickname => auth.info.nickname,
+                    :first_name => auth.info.first_name || auth.info.name.split(' ').first,
+                    :last_name => auth.info.last_name || auth.info.name.split(' ').last,
+                    :location => auth.extra.raw_info.location,
+                    :phone => auth.info.phone,
+                    :company => auth.extra.raw_info.company,
+                    :github_token => auth.credentials.token,
+                    :blog_url => auth.extra.raw_info.blog || auth.info.urls['Blog']
+                    )
     
-    session[:token] = user.session_token = SecureRandom.hex
-
-    if user.save
-      if user.photo_url
-        redirect_to user_path(user), :notice => "Signed in!"
+        auth_user(user)
       else
-        redirect_to edit_user_path(user)
+        redirect_to :root, :notice => "Your secret was not valid. Please see the site admin."
       end
     else
-      redirect_to :back, :notice => "Please try again!"
+      user = User.find_by_github_uid(auth.uid)
+      if user
+        auth_user(user)
+      else
+        redirect_to :root, :notice => "You do not have access to login into the site."
+      end
     end
   end
 
@@ -40,6 +44,21 @@ class SessionsController < ApplicationController
       redirect_to :back, :notice => "Please try again!"
     end
   end
+  
+  private
+  
+  def auth_user(user)
+    session[:token] = user.session_token = SecureRandom.hex
 
+    if user.save
+      if user.photo_url
+        redirect_to user_path(user), :notice => "Signed in!"
+      else
+        redirect_to edit_user_path(user)
+      end
+    else
+      redirect_to :root, :notice => "User was not saved!"
+    end
+  end
   
 end

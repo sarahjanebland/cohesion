@@ -30,6 +30,10 @@ describe User do
 
   let(:user) { create(:user) }
   
+  it "should be valid" do
+    user.should be_valid
+  end
+  
   it "should not allow invalid emails" do
     build(:user, email: "asdf@asdf.c").should_not be_valid
   end
