@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :admin do
-    user nil
+    user
   end
 end
