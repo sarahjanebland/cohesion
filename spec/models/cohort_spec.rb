@@ -28,4 +28,10 @@ describe Cohort do
   it "should only accept valid dates" do
     build(:cohort, start_date: "04-12").should_not be_valid
   end
+  
+  it "should list current cohorts" do
+    old_cohort = create(:cohort, start_date: DateTime.now - 7 * 13)
+    Cohort.current.should include(cohort)
+    Cohort.current.should_not include(old_cohort)
+  end
 end

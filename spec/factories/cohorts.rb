@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :cohort do
-  	name        "skippers"
-  	start_date  Date.today
-  	email       "test@email.com"
-  	photos_url  "http://dropbox.com"
-  	secret_url  SecureRandom.hex(6)
+  	sequence(:name)   {|n| "cohort#{n}" }
+  	start_date        Date.today
+  	sequence(:email)  {|n| "test#{n}@email.com" }
+  	photos_url        "http://dropbox.com"
+  	secret_url        SecureRandom.hex(6)
   end
 end
