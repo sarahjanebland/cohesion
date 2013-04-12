@@ -7,6 +7,7 @@ class Cohort < ActiveRecord::Base
   validates :name,  presence: true
   validates :start_date,  presence: true
   validates :email,  presence: true
+  validates :secret_url, presence: true, length: {in: 6..12}
 
   before_create :generate_secret_url
   after_save :send_welcome_email
