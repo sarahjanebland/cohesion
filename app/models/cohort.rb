@@ -6,7 +6,7 @@ class Cohort < ActiveRecord::Base
 
   validates :name,  presence: true, uniqueness: true
   validates :start_date,  presence: true, uniqueness: true
-  validates :email,  presence: true, uniqueness: true
+  validates :email,  presence: true, uniqueness: true, format: { with: /[\w\-\.]+@[\w\-\.]+\.[a-z]{2,7}/i }
   validates :secret_url, presence: true, length: {in: 6..12}, uniqueness: true
 
   before_create :generate_secret_url

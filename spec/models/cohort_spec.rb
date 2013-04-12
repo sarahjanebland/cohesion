@@ -20,4 +20,15 @@ describe Cohort do
   it { should validate_uniqueness_of(:secret_url) }
   
   it { should have_many(:users)}
+  
+  it "should not allow invalid emails" do
+    build(:cohort, email: "@asdf.com").should_not be_valid
+    build(:cohort, email: "asdf.com").should_not be_valid
+    build(:cohort, email: "asdf@.com").should_not be_valid
+    build(:cohort, email: "asdf@asdf.c").should_not be_valid
+  end
+  
+  it "should only accept valid dates" do
+    build(:cohort, start_date: "04-12").should_not be_valid
+  end
 end
