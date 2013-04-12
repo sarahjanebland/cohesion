@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def index
-    @user = User.featured
+    @user = User.featured || User.new
   end
 end
