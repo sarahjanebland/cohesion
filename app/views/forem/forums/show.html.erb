@@ -1,6 +1,12 @@
 <%= render :partial => 'forem/forums/head', :locals => { :forum => @forum } %>
 
 <%= forem_pages_widget(@topics) %>
+<% #search_forum_path @forum %>
+
+<%= form_tag search_forum_path(@forum), :method=>:get do %>
+  <%= text_field_tag :q, @search %>
+  <%= submit_tag "Search" %>
+<% end %>
 
 <table class='topics subdued' cellspacing='0'>
   <thead>

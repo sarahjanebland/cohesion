@@ -273,6 +273,7 @@ DEPENDENCIES
   rails (= 3.2.12)
   rails_config
   rb-fsevent (~> 0.9)
+  redcarpet
   rspec-rails
   sass-rails (~> 3.2.3)
   shoulda-matchers
