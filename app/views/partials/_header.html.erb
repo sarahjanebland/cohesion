@@ -5,7 +5,7 @@
       <nav class="pull-right">
           <ul class="nav">
             <% if current_user %>
-
+            <li><%= link_to "Forums", forem.root_path %></li>
             <li><%= link_to "Edit Profile", main_app.edit_user_path(current_user.id) %></li>
             <li><%= link_to "Sign Out", main_app.signout_path %></li>
             <% else %>
