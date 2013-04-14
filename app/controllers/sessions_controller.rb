@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
                 :github_token => auth.credentials.token,
                 :blog_url => auth.extra.raw_info.blog || auth.info.urls['Blog']
                 )
-    
+    p user.errors.full_messages
     session[:token] = user.session_token = SecureRandom.hex
 
     if user.save

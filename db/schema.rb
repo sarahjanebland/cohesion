@@ -157,7 +157,6 @@ ActiveRecord::Schema.define(:version => 20130411230630) do
     t.string   "provider"
     t.string   "facebook_url"
     t.string   "twitter_url"
-    t.string   "github_url"
     t.datetime "created_at",                                         :null => false
     t.datetime "updated_at",                                         :null => false
     t.boolean  "forem_admin",          :default => false
