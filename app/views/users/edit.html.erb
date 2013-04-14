@@ -5,7 +5,6 @@
 
   <% unless @user.photo_url %>
     <ul class="avatars">
-      <%= @avatars %>
       <% @avatars.each do |img| %>
         <% select = img[:src].include?(@user.first_name.downcase) %>
         <li class="avatar <%= select ? 'selected' : '' %> <%= "cohort_#{img[:id]}" %>">
