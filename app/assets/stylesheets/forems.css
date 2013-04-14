@@ -1,0 +1,12 @@
+.actions {
+  list-style-type: none;
+}
+
+.contents ul li{
+  display: inline;
+}
+
+.icon img{
+  border: 1px solid #666;
+  box-shadow: none;
+}
