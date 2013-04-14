@@ -37,4 +37,8 @@ class User < ActiveRecord::Base
   def self.featured
     wise.sample
   end
+
+  def to_s
+    self.first_name
+  end
 end
