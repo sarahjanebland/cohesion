@@ -1,5 +1,5 @@
 <%= form_tag root_path, :method => :post do %>
-		<%= select(:view, :cohort, @cohort.map(&:name)) %>
+		<%= select(:view, :cohort, @cohort.map(&:name), {:include_blank => true }) %>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search"%>
 <% end %>
