@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411230630) do
+ActiveRecord::Schema.define(:version => 20130415181639) do
 
   create_table "admins", :force => true do |t|
     t.integer  "user_id"
@@ -74,10 +74,10 @@ ActiveRecord::Schema.define(:version => 20130411230630) do
     t.integer  "topic_id"
     t.text     "text"
     t.integer  "user_id"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.integer  "reply_to_id"
-    t.string   "state",       :default => "pending_review"
+    t.string   "state",       :default => "approved"
     t.boolean  "notified",    :default => false
   end
 
@@ -95,13 +95,13 @@ ActiveRecord::Schema.define(:version => 20130411230630) do
     t.integer  "forum_id"
     t.integer  "user_id"
     t.string   "subject"
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
-    t.boolean  "locked",       :default => false,            :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+    t.boolean  "locked",       :default => false,      :null => false
     t.boolean  "pinned",       :default => false
     t.boolean  "hidden",       :default => false
     t.datetime "last_post_at"
-    t.string   "state",        :default => "pending_review"
+    t.string   "state",        :default => "approved"
     t.integer  "views_count",  :default => 0
     t.string   "slug"
   end
@@ -157,10 +157,10 @@ ActiveRecord::Schema.define(:version => 20130411230630) do
     t.string   "provider"
     t.string   "facebook_url"
     t.string   "twitter_url"
-    t.datetime "created_at",                                         :null => false
-    t.datetime "updated_at",                                         :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
     t.boolean  "forem_admin",          :default => false
-    t.string   "forem_state",          :default => "pending_review"
+    t.string   "forem_state",          :default => "approved"
     t.boolean  "forem_auto_subscribe", :default => false
   end
 
