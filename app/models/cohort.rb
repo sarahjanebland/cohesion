@@ -10,7 +10,7 @@ class Cohort < ActiveRecord::Base
   validates :secret_url, presence: true, length: {in: 6..12}, uniqueness: true
 
   before_validation :generate_secret_url
-  after_save :send_signup_email
+  # after_save :send_signup_email
 
   scope :current, lambda { where("start_date > ?", 12.weeks.ago) }
 
