@@ -48,6 +48,15 @@ Spork.prefork do
     # the seed, which is printed after each run.
     #     --seed 1234
     config.order = "random"
+  end  
+
+  def login(user)
+    if Capybara.current_driver == :webkit
+      page.driver.browser.set_cookie("user=#{user.id}; path=/; domain=127.0.0.1")
+    else
+      cookie_jar = Capybara.current_session.driver.browser.current_session.instance_variable_get(:@rack_mock_session).cookie_jar
+      cookie_jar[:user] = user.id
+    end
   end
 end
 
