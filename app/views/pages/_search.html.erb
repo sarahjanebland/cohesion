@@ -1,0 +1,11 @@
+<%= form_tag root_path, :method => :post do %>
+		<%= select(:view, :cohort, @cohort.map(&:name), {:include_blank => true }) %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search"%>
+<% end %>
+
+<ul>
+	<% @users.each do |user| %>
+	<li><img src="<%= user.photo_url %>" alt="<%= user.nickname %>" /></li>
+	<% end %>
+</ul>

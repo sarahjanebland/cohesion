@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/radar/forem.git
-  revision: 244a8224d9f7ee5598204de68d7df02ee2be4419
+  revision: 0ec845f88bd7330f10fdf333485c21f76ea035d9
   specs:
     forem (1.0.0.beta1)
       cancan (= 1.6.8)
