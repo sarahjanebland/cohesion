@@ -3,9 +3,15 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  before_filter :auth
+
   private
 
   def current_user
     @current_user ||= User.find_by_session_token(session[:token]) if session && session[:token]
+  end
+
+  def auth
+    redirect_to :root unless current_user
   end
 end
