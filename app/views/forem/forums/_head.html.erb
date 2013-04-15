@@ -15,8 +15,10 @@
     <% end %>
   </menu>
 
-  <%= form_tag search_forum_path(@forum), :method=>:get do %>
-  <%= text_field_tag :q, @search %>
-  <%= submit_tag "Search" %>
+  <% if @search %>
+    <%= form_tag search_forum_path(@forum), :method=>:get do %>
+    <%= text_field_tag :q, @search %>
+    <%= submit_tag "Search" %>
+   <% end %> 
 <% end %>
 
