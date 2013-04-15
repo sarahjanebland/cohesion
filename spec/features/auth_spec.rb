@@ -20,7 +20,7 @@ feature "Authenticated users" do
     expect(page).to have_link("Sign Out")
   end
 
-  scenario "should be allowed to get pas the index page" do
+  scenario "should be allowed to get passed the index page" do
     user = create(:user)
     login(user)
     visit users_path
