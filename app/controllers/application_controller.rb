@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
   end
 
   def auth
-    redirect_to :root unless current_user
+    unless Rails.env.test? && cookies[:signed_in]
+      redirect_to :root unless current_user
+    end
   end
 end
