@@ -1,3 +1,8 @@
+<%= search_form_for @q do |f| %>
+	<%= f.text_field :name %>
+	<%= f.submit "Find" %>
+<% end %>
+
 <div class="name_img_span">
   <h4><%= @user.first_name %> <%= @user.last_name %></h4>
   <img src="<%= @user.photo_url %>" alt="<%= @user.nickname %>" />
