@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe User do
 
+  let(:user) { build(:user) }
+
 	it { should allow_mass_assignment_of(:first_name) }
 	it { should allow_mass_assignment_of(:last_name) }
 	it { should allow_mass_assignment_of(:email) }
@@ -28,7 +30,9 @@ describe User do
   
   it { should belong_to(:cohort) }
 
-  let(:user) { create(:user) }
+  it "should be valid" do
+    user.should be_valid
+  end
   
   it "should not allow invalid emails" do
     build(:user, email: "asdf@asdf.c").should_not be_valid

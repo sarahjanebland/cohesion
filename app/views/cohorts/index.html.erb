@@ -21,3 +21,5 @@
 
 <h3>Delete a member of a cohort:</h3>
 
+<%= collection_select(:name, :cohort_id, @cohorts, :id, :name, {:prompt => true}) %>
+

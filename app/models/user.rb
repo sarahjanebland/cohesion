@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   end
 
   def self.wise
-    pictured.select{|user| user.advice }
+    pictured.select{|user| user.advice && user.advice.length > 0 }
   end
 
   def self.featured

@@ -13,6 +13,13 @@
 <%= render :partial => "partials/header" %>
 
 <div id="top_container" class="container">
+  <% if flash[:alert] %>
+    <p class="flash flash-error"><%= flash[:alert] %></p>
+  <% end %>
+  <% if flash[:notice] %>
+    <p class="flash flash-notice"><%= flash[:notice] %></p>
+  <% end %>
+
   <%= yield %>
 </div>
 
