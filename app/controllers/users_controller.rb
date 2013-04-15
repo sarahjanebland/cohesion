@@ -13,8 +13,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(current_user.id)
-    @cohorts = Cohort.all
-    @avatars = avatars
+    @avatars = avatars_by_cohort(@user.cohort)
   end
 
   def show
@@ -41,6 +40,11 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def avatars_by_cohort(cohort)
+    doc = Nokogiri::HTML(open(cohort.photos_url))
+    doc.css("ol#gallery-view-media li img").map { |li| {src: li['data-src'], id: cohort.id} }
+  end
 
   def avatars
     imgs = []

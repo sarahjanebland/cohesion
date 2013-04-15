@@ -21,11 +21,6 @@
   <% end %>
 
 <div id='update_group'>
-
-  <div class="control-group">
-    <%= f.label :Select_your_Cohort, :class => "control-label" %>
-    <%= f.collection_select :cohort_id, @cohorts, :id, :name, {}, {:class => "controls cohort_img" }%>
-  </div>
   <div class="control-group">
     <%= f.label :First_Name, :class => "control-label" %>
     <%= f.text_field :first_name, :class => "controls"  %> 
