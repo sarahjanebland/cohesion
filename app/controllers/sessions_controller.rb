@@ -6,7 +6,9 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
 
     if session[:secret] && Cohort.find_by_secret_url(session[:secret])
-
+      
+      cohort = Cohort.find_by_secret_url(session[:secret])
+      
       user = User.find_or_create_by_github_uid(
                   :github_uid => auth.uid,
                   :provider => auth.provider,

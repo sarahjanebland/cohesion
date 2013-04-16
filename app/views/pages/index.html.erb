@@ -1,7 +1,7 @@
 <% if current_user %>
-	<%= render 'search' %>
+	<%= render '/pages/search' %>
 	<div class="search-box">
-	<%= render 'results', :users => @users %>
+	<%= render '/pages/results', :users => @users %>
 	</div>
 <% else %>
 <div class="name_img_span">
@@ -11,7 +11,7 @@
   <%= link_to image_tag('l-arrow.png'), "/pages/random_user", :remote=>true, method: :post %>
   
  	<div class="featured_user">
- 		<%= render 'home_users', :user => @user %>
+ 		<%= render '/pages/home_users', :user => @user %>
 	</div>
   
 </div>
