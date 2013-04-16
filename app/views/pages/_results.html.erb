@@ -1,5 +1,5 @@
 <ul>
 	<% users.each do |user| %>
-	<li><img src="<%= user.photo_url %>" alt="<%= user.nickname %>" /></li>
+	<li><a href="<%= user_path(user) %>"><img src="<%= user.photo_url %>" alt="<%= user.nickname %>" /></a></li>
 	<% end %>
 </ul>
