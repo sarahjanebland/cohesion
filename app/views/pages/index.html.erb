@@ -8,11 +8,13 @@
 
  
 
-  <%= link_to image_tag('l-arrow.png'), "/pages/random_user", :remote=>true, method: :post %>
+  <%= link_to image_tag('l-arrow.png', :class => 'l-arrow'), pages_random_user_path, :remote => true  %>
+  <%= link_to image_tag('r-arrow.png', :class => 'l-arrow'), pages_random_user_path, :remote => true  %>
   
  	<div class="featured_user">
  		<%= render '/pages/home_users', :user => @user %>
 	</div>
-  
+
+
 </div>
 <% end %> 

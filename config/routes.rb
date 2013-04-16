@@ -16,7 +16,7 @@ Phaseboot::Application.routes.draw do
   post '/pages/search'
   get '/auth/:provider/callback', to: 'sessions#create'
   post '/search' => 'users#query'
-  post '/pages/random_user'
+  get '/pages/random_user'
 
   match "/signout" => "sessions#destroy", :as => :signout
   

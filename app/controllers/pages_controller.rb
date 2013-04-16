@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_filter :auth, only: :index
+  skip_before_filter :auth, only: [:index, :random_user]
   respond_to :json, :html
   
   def index
