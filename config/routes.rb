@@ -13,7 +13,7 @@ Phaseboot::Application.routes.draw do
   resources :cohorts
 
   root to: "pages#index"
-
+  post '/pages/search'
   get '/auth/:provider/callback', to: 'sessions#create'
   post '/search' => 'users#query'
 

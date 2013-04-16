@@ -1,5 +1,8 @@
 <% if current_user %>
 	<%= render 'search' %>
+	<div class="search-box">
+	<%= render 'results', :users => @users %>
+	</div>
 <% else %>
 <div class="name_img_span">
   <h4><%= @user.first_name %> <%= @user.last_name %></h4>
