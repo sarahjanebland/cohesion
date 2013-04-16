@@ -1,0 +1,12 @@
+<% if can?(:read, forum) %>
+  <tr class="forum <%= cycle("odd", "even") %>">
+    <td>
+      <%= link_to forem_emojify(forum.title), forem.forum_path(forum), :class => "title" %>
+      <div class='description'><%= forem_format(forum.description) %></div>
+    
+    </td>
+    <td class="topics-count"><%= topics_count(forum) %></td>
+    <td class="posts-count"><%= posts_count(forum) %></td>
+    <td class="views-count"><%= forum.views_count %></td>
+  </tr>
+<% end %>

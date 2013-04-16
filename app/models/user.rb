@@ -13,10 +13,6 @@ class User < ActiveRecord::Base
 
   belongs_to :cohort
 
-  # searchable do
-  #   text :first_name, :last_name, :nickname
-  # end
-
   def format_urls
     self.facebook_url = self.facebook_url.gsub(/.*\//, '') if self.facebook_url
     self.twitter_url = self.twitter_url.gsub(/.*\//, '') if self.twitter_url
@@ -37,4 +33,10 @@ class User < ActiveRecord::Base
   def self.featured
     wise.sample
   end
+
+  def to_s
+    self.first_name
+  end
+
+
 end

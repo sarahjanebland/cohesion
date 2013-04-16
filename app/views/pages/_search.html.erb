@@ -1,0 +1,6 @@
+<%= form_tag pages_search_path, :class => "search-users", :remote => true do %>
+		<%= select(:view, :cohort, @cohort.map(&:name), {:include_blank => true }) %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search"%>
+<% end %>
+
