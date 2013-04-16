@@ -29,6 +29,7 @@ describe User do
   it { should validate_uniqueness_of :github_uid }
   
   it { should belong_to(:cohort) }
+  it { should have_one(:admin) }
 
   it "should be valid" do
     user.should be_valid
@@ -50,6 +51,14 @@ describe User do
   		user.save
   		user.facebook_url.should eq("juliantai")
   	end
+  end
+
+  it "should not be an admin" do
+    user.admin?.should be_false
+  end
+
+  it "should adminify!" do
+    expect{ user.adminify! }.to change{ user.admin? }
   end
 
 end

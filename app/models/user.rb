@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   before_save :format_urls
 
   belongs_to :cohort
+  has_one :admin
 
   # searchable do
   #   text :first_name, :last_name, :nickname
@@ -22,19 +23,29 @@ class User < ActiveRecord::Base
     self.twitter_url = self.twitter_url.gsub(/.*\//, '') if self.twitter_url
   end
 
-  def self.current
-    Cohort.includes(:users).current.map { |cohort| cohort.users }.flatten
+  def adminify!
+    Admin.find_or_create_by_user_id(self.id)
   end
 
-  def self.pictured
-    current.select{|user| user.photo_url }
+  def admin?
+    Admin.exists?(user_id: self.id)
   end
 
-  def self.wise
-    pictured.select{|user| user.advice && user.advice.length > 0 }
-  end
+  class << self
+    def current
+      Cohort.includes(:users).current.map { |cohort| cohort.users }.flatten
+    end
 
-  def self.featured
-    wise.sample
+    def pictured
+      current.select{|user| user.photo_url }
+    end
+
+    def wise
+      pictured.select{|user| user.advice && user.advice.length > 0 }
+    end
+
+    def featured
+      wise.sample
+    end
   end
 end

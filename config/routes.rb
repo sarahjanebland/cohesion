@@ -5,6 +5,7 @@ Phaseboot::Application.routes.draw do
   resources :cohorts
 
   root to: "pages#index"
+  get "/admin" => "pages#admin", :as => :admin
 
   get '/auth/:provider/callback', to: 'sessions#create'
   post '/search' => 'users#query'
