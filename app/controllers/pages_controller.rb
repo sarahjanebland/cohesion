@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
+  skip_before_filter :auth, only: :index
   respond_to :json, :html
-
+  
   def index
     @user = User.featured || User.new
     @cohort = Cohort.all
