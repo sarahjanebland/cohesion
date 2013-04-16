@@ -90,6 +90,10 @@ header a:hover {
   list-style-type: none;
 }
 
+.search-box li{
+  float: left;
+}
+
 .search-users {
   text-align: center;
 }
