@@ -5,7 +5,5 @@ $(function() {
 		}
 		$(".search-box").html(data);
 	});
-	$("form.search-users").on("ajax:error", function(event, data){
-		
-	});	
+
 });
