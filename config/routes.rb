@@ -2,7 +2,9 @@ Phaseboot::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :access, only: [:show]
-  resources :cohorts
+  resources :cohorts do
+    resources :users, only: [:index]
+  end
 
   root to: "pages#index"
   get "/admin" => "pages#admin", :as => :admin

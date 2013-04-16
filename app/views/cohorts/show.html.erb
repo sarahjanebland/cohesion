@@ -1,0 +1,16 @@
+<h2><%= @cohort.name %></h2>
+
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @cohort.name %></dd>
+  <dt>Start Date:</dt>
+  <dd><%= @cohort.start_date %></dd>
+  <dt>Email:</dt>
+  <dd><%= link_to @cohort.email, "mailto:#{@cohort.email}" %></dd>
+  <dt>Photos URL:</dt>
+  <dd><%= link_to @cohort.photos_url, @cohort.photos_url %></dd>
+</dl>
+
+<% if current_user.admin? %>
+  <span><%= link_to "Edit", edit_cohort_path(@cohort) %></span>
+<% end %>

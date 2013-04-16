@@ -1,0 +1,6 @@
+<h2><%= link_to @cohort.name, cohort_path(@cohort) %></h2>
+
+<h3>Edit Cohort:</h3>
+
+<%= render "form.html.erb" %>
+<span><%= link_to "Delete", cohort_path(@cohort), method: :delete %></span>

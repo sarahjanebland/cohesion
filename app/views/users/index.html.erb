@@ -1,10 +1,20 @@
-<div id='home_page_header'> 
+<% if @cohort %>
+  <h2><%= @cohort.name %></h2>
+<% end %>
 
 <%if current_user %>
-  <% @existing_users.each do |user| %>
-    <% if user.photo_url %>
-      <%= link_to (image_tag user.photo_url), "/users/#{user.id}" %>
-    <% end %> 
-  <% end %>
+  <ul class="table users">
+    <% @users.each do |user| %>
+      <li>
+        <% if user.first_name && user.last_name %>
+          <%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %>
+        <% elsif user.email %>
+          <%= link_to user.email, user_path(user) %>
+        <% else %>
+          <%= link_to user.id, user_path(user) %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
 </div>

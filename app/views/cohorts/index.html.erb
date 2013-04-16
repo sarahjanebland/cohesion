@@ -1,0 +1,13 @@
+<h2>Cohorts</h2>
+
+<ul class="table cohorts">
+<% @cohorts.each do |cohort| %>
+  <li>
+    <span><%= link_to cohort.name, cohort_path(cohort) %></span>
+    <span><%= link_to "#{cohort.users.count} Students", cohort_users_path(cohort) %></span>
+    <% if current_user.admin? %>
+      <span class="right"><%= link_to "Edit", edit_cohort_path(cohort) %></span>
+    <% end %>
+  </li>
+<% end %>
+</ul>

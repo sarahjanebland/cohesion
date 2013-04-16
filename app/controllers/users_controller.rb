@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
 
+  before_filter :auth_admin, only: [:destroy]
+
   def index
-    @existing_users = User.all(:conditions => "photo_url != ''")
-    @avatars = avatars
+    if params[:cohort_id]
+      @cohort = Cohort.find(params[:cohort_id])
+      @users = @cohort.users
+    else
+      @users = User.all(:conditions => "photo_url != ''")
+    end
   end
 
   def create
@@ -25,6 +31,15 @@ class UsersController < ApplicationController
     @user.update_attributes(params[:user])
 
     redirect_to "/users/#{current_user.id}"
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    if user.destroy
+      redirect_to users_path, :notice => "Successfully destroyed"
+    else
+      redirect_to users_path, :error => "There was an issue"
+    end
   end
 
   def logout

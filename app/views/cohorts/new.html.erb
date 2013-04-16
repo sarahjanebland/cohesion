@@ -1,20 +1,5 @@
 <h2>Admin Page</h2>
 
-<h3>Create a new cohort:</h3>
+<h3>Create Cohort:</h3>
 
-<%= form_for @cohort do |f| %>
-
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <%= label_tag :start_date %>
-    <%= date_select :start_date, "start_date" %>
-
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-
-    <%= f.label :photos_url %>
-    <%= f.text_field :photos_url %>
-
-    <%= f.submit %>
-  <% end %>
+<%= render "form.html.erb" %>
