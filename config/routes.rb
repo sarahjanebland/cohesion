@@ -7,21 +7,24 @@ Phaseboot::Application.routes.draw do
   # We ask that you don't use the :as option here, as Forem relies on it being the default of "forem"
   mount Forem::Engine, :at => '/forums'
 
-  resources :users
-  resources :sessions, only: [:new, :create, :destroy]
-  resources :access, only: [:show]
-  resources :cohorts do
-    resources :users, only: [:index]
-  end
-
   root to: "pages#index"
   get "/admin" => "pages#admin", :as => :admin
   post '/pages/search'
   get '/auth/:provider/callback', to: 'sessions#create'
   post '/search' => 'users#query'
   get '/pages/random_user'
+  get '/users/cohort_reselect'
 
   match "/signout" => "sessions#destroy", :as => :signout
+
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :access, only: [:show]
+  resources :cohorts do
+  resources :users, only: [:index]
+end
+
+
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

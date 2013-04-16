@@ -1,0 +1,6 @@
+<%= form_for @user do |f| %>
+	<%= f.label "Current Cohort:" %>
+	<%= f.collection_select :cohort_id, @cohorts, :id, :name %>
+
+	<p><%= f.submit "Select new cohort" %></p>
+<% end %>

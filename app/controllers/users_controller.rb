@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_filter :auth_admin, only: [:destroy]
+  skip_before_filter :auth, only: [:edit_cohort]
 
   def index
     if params[:cohort_id]
@@ -54,7 +55,12 @@ class UsersController < ApplicationController
     render json: search.results
   end
 
-  private
+  def cohort_reselect
+    @user = current_user
+    @cohorts = Cohort.all
+  end
+
+private
 
   def avatars_by_cohort(cohort)
     doc = Nokogiri::HTML(open(cohort.photos_url))
