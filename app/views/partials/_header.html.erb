@@ -9,7 +9,7 @@
                 <li><%= link_to "Admin", main_app.admin_path %></li>
               <% end %>
               <li><%= link_to "Forums", forem.root_path %></li>
-              <li><%= link_to "Edit Profile", main_app.edit_user_path(current_user.id) %></li>
+              <li><%= link_to "Profile", main_app.edit_user_path(current_user.id) %></li>
               <li><%= link_to "Sign Out", main_app.signout_path %></li>
             <% else %>
               <li><%= link_to "Sign in with Github!", "/auth/github", :class => "btn-auth btn-github", :id => "sign-in-github"%></li>
