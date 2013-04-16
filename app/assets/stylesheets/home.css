@@ -1,3 +1,23 @@
+body {
+  background-image:url('bedge_grunge.png');
+  background-repeat:repeat;
+  color: #222;
+}
+
+a {
+  color: rgb(0, 102, 255);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.nav ul {
+  margin-top: 0;
+  font-size: 16px;
+}
+
 .faux_link {
   color: white;
 }
@@ -6,21 +26,18 @@
   margin-top: 100px;
 }
 
-header {
-  line-height: 120px;
- }
 
- header a:hover {
+header a:hover {
   text-decoration: none;
- }
+}
 
 #top_container {
-  margin-top: 125px;
+  margin-top: 170px;
 }
 
 #logo {
-font-size: 36px;
-margin-top: 10px;
+  font-size: 36px;
+  margin-top: 10px;
 }
 
 #cohort_cohort_id {
@@ -31,13 +48,99 @@ margin-top: 10px;
   border: none;
   box-shadow: none;
   margin-left: -13px;
+
 }
 
 .profile_img {
-  padding-top: 25px;
+  float: left;
 }
 
 .tiny_pics {
   width: 75px;
   border: 3px solid white;
+}
+
+.navbar-inner {
+  background-image: linear-gradient(to bottom, #666, #111111) !important;
+}
+
+.profile_img img{
+  box-shadow: 2px 2px 7px #666;
+}
+
+.profile_label{
+  color: #777;
+  display: inline;
+}
+
+.controls img {
+    box-shadow: 2px 2px 7px #666;
+}
+
+.search-box img {
+    box-shadow: 2px 2px 7px #666;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.search-box ul{
+  list-style-type: none;
+}
+
+.search-users {
+  text-align: center;
+}
+
+.search-users input[type="submit"]{
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+  background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+  background-color:#ededed;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  color:#777777;
+  font-family:arial;
+  font-size:12px;
+  font-weight:bold;
+  padding:4px 17px;
+  text-decoration:none;
+  text-shadow:1px 1px 1px #ffffff;
+  margin-top: -10px;
+}
+
+.search-users input[type="submit"]:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+  background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+  background-color:#dfdfdf;
+}
+
+.search-users input[type="submit"]:active {
+  position:relative;
+  top:1px;
+}
+
+.search-users input[type="submit"] a{
+  color: #333;
+}
+
+nav {
+  font-family: Sanchez;
+  font-size: 16px;
+}
+
+.navbar .nav > li > a {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 15px;
+}
+
+#sign-in-github{
+  padding: 10px 15px 10px;
 }

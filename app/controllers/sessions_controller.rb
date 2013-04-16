@@ -4,9 +4,10 @@ class SessionsController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
-    
-    cohort = Cohort.find_by_secret_url(session[:secret]) if session && session[:secret]
-    if cohort
+    if session[:secret] && Cohort.find_by_secret_url(session[:secret])
+      
+      cohort = Cohort.find_by_secret_url(session[:secret])
+      
       user = User.find_or_create_by_github_uid(
                   :github_uid => auth.uid,
                   :provider => auth.provider,
@@ -30,7 +31,7 @@ class SessionsController < ApplicationController
 
       if user.save
         if user.photo_url
-          redirect_to user_path(user), :notice => "Signed in!"
+          redirect_to root_path, :notice => "Signed in!"
         else
           redirect_to edit_user_path(user)
         end
