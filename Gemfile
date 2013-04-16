@@ -30,7 +30,7 @@ end
 gem 'jquery-rails'
 
 group :test, :development do
-  
+  gem 'debugger'  
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'better_errors'
