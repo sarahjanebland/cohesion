@@ -5,8 +5,14 @@
 	</div>
 <% else %>
 <div class="name_img_span">
-  <h4><%= @user.first_name %> <%= @user.last_name %></h4>
-  <img src="<%= @user.photo_url %>" alt="<%= @user.nickname %>" />
-  <p><%= @user.advice %></p>
+
+ 
+
+  <%= link_to image_tag('l-arrow.png'), "/pages/random_user", :remote=>true, method: :post %>
+  
+ 	<div class="featured_user">
+ 		<%= render 'home_users', :user => @user %>
+	</div>
+  
 </div>
 <% end %> 

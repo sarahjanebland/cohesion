@@ -1,9 +1,12 @@
-d// Place all the styles related to the user controller here.
+// Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #user_info {
   list-style: none;
+  display: inline-block;
+  padding-left: 30px;
+  width: 480px;
 }
 
 ul.avatars {
@@ -45,16 +48,11 @@ ul.avatars li.avatar img {
 }
 
 .welcome {
-  margin-bottom: 20px;
   margin-top: 20px;
-  font-size: 16px;
+  margin-bottom: 20px;
+  font-size: 24px;
   font-weight: bold;
-  color: #fff;
-}
-
-.profile_label {
-  display: inline;
-  color: #666;
+  color: #333;
 }
 
 .controls img {

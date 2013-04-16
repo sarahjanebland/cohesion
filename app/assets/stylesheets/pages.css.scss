@@ -5,26 +5,40 @@
 /* Home page */
 
 .name_img_span {
-  width: 200px;
+  width: 500px;
   float: none;
-  margin: 100px auto;
+  margin: 50px auto;
+  text-align: center;
+  
+  
 
   h4 {
     text-align: center;
   }
 
   img {
-    width: 185px;
+    box-shadow: 2px 2px 7px #666;
+  }
+
+  .arrow {
+    border: none;
+    box-shadow: none;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   p {
-    margin-top: 5px;
-    text-align: justify;
+    margin-top: 30px;
     font-style: italic;
-    color: #999;
+    color: #666;
+    font-size: 42px;
+    font-family: 'Sanchez', serif;
+    line-height: 40px;
   }
 
-  p:before, p:after {
-    content: '"';
-  }
+  
 }
+
+
+
+
