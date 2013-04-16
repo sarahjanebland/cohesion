@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(current_user.id)
+    @user = User.find(current_user)
     @avatars = avatars_by_cohort(@user.cohort)
   end
 
