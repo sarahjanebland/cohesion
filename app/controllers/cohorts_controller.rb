@@ -1,10 +1,17 @@
 class CohortsController < ApplicationController
+
+  before_filter :auth_admin, except: [:show, :index]
+
   def index
-  	@cohort = Cohort.new
     @cohorts = Cohort.all
   end
 
   def show
+    @cohort = Cohort.find(params[:id])
+  end
+
+  def new
+    @cohort = Cohort.new
   end
 
   def create  	

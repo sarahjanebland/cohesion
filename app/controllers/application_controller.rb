@@ -18,4 +18,8 @@ class ApplicationController < ActionController::Base
   def auth
     redirect_to :root unless current_user
   end
+
+  def auth_admin
+    redirect_to :root unless current_user.admin?
+  end
 end
