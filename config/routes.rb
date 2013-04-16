@@ -13,9 +13,10 @@ Phaseboot::Application.routes.draw do
   resources :cohorts
 
   root to: "pages#index"
-
+  post '/pages/search'
   get '/auth/:provider/callback', to: 'sessions#create'
   post '/search' => 'users#query'
+  get '/pages/random_user'
 
   match "/signout" => "sessions#destroy", :as => :signout
   

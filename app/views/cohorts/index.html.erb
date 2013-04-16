@@ -7,8 +7,8 @@
 		<%= f.label :name %>
 		<%= f.text_field :name %>
 
-		<%= f.label :start_date %>
-		<%= f.date_select :start_date %>
+		<%= label_tag :start_date %>
+		<%= date_select :start_date, "start_date" %>
 
 		<%= f.label :email %>
 		<%= f.text_field :email %>
@@ -20,4 +20,6 @@
 	<% end %>
 
 <h3>Delete a member of a cohort:</h3>
+
+<%= collection_select(:name, :cohort_id, @cohorts, :id, :name, {:prompt => true}) %>
 

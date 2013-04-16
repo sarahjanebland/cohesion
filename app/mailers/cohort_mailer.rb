@@ -1,9 +1,9 @@
 class CohortMailer < ActionMailer::Base
-  default from: "admin@bootconnect.com"
+  default from: 'hankjohnson2000@gmail.com'
 
   def signup_email(cohort)
-  	link = cohort.secret_url
-  	@url 	=	"http://bootconnect.com/access/#{link}"
+  	@url 	=	"http://boot-connect.herokuapp.com/access/#{cohort.secret_url}"
+  	@name = cohort.name
   	mail(to: cohort.email, subject: "Welcome to BootConnect!")
   end
 end

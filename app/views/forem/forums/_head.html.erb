@@ -14,4 +14,11 @@
       <%= link_to t('forem.forum.moderator_tools'), forem.forum_moderator_tools_path(forum) %>
     <% end %>
   </menu>
-</div>
+
+  <% if @search %>
+    <%= form_tag search_forum_path(@forum), :method=>:get do %>
+    <%= text_field_tag :q, @search %>
+    <%= submit_tag "Search" %>
+   <% end %> 
+<% end %>
+

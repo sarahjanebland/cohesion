@@ -1,9 +1,13 @@
 class SessionsController < ApplicationController
 
+  skip_before_filter :auth, only: :create
+
   def create
     auth = request.env["omniauth.auth"]
-    
     if session[:secret] && Cohort.find_by_secret_url(session[:secret])
+      
+      cohort = Cohort.find_by_secret_url(session[:secret])
+      
       user = User.find_or_create_by_github_uid(
                   :github_uid => auth.uid,
                   :provider => auth.provider,
@@ -15,7 +19,8 @@ class SessionsController < ApplicationController
                   :phone => auth.info.phone,
                   :company => auth.extra.raw_info.company,
                   :github_token => auth.credentials.token,
-                  :blog_url => auth.extra.raw_info.blog || auth.info.urls['Blog']
+                  :blog_url => auth.extra.raw_info.blog || auth.info.urls['Blog'],
+                  :cohort_id => cohort.id
                   )
     else
       user = User.find_by_github_uid(auth.uid)
@@ -26,7 +31,7 @@ class SessionsController < ApplicationController
 
       if user.save
         if user.photo_url
-          redirect_to user_path(user), :notice => "Signed in!"
+          redirect_to root_path, :notice => "Signed in!"
         else
           redirect_to edit_user_path(user)
         end
