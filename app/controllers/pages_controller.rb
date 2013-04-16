@@ -21,15 +21,12 @@ class PagesController < ApplicationController
       render :json => { error: "No Users Found" }
     end
   end
-
-<<<<<<< HEAD
+  
   def admin
   end
-=======
+
   def random_user
     user = User.all.sample
     render :json => render_to_string(:partial => "pages/home_users", :locals => {:user => user}).to_json
   end
-
->>>>>>> forem
 end
