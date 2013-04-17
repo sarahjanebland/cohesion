@@ -45,7 +45,7 @@
     <div class="control-group">
       <%= f.label "Facebook Handle", :class => "control-label" %>
       <%= f.text_field :facebook_url, :class => "controls", :placeholder => "facebook.com/username" %>
-      <div class="button facebook"><%= link_to "Connect" %></div>
+      <% if @show_facebook %><div class="button facebook"><%= link_to "Connect", "/auth/facebook" %></div><% end %>
     </div>
     <div class="control-group">
       <%= f.label "Twitter Handle", :class => "control-label" %>
