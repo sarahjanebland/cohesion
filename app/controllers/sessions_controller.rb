@@ -36,17 +36,25 @@ class SessionsController < ApplicationController
       bday = auth.extra.raw_info.birthday.split('/').map{|n| n.to_i }
       user.birthday = Date.new(bday[2], bday[0], bday[1])
 
-      Provider.find_or_create_by_user_id(user: current_user, name: "facebook", token: auth.credentials.token)
+      Provider.find_or_create_by_user_id_and_name(user: user, name: auth.provider, token: auth.credentials.token)
+    elsif auth.provider == 'twitter'
+      user = current_user
+      user.first_name = auth.info.first_name unless user.first_name
+      user.last_name = auth.info.last_name unless user.last_name
+      user.email = auth.info.email unless user.email
+      user.twitter_url = auth.info.urls[:Twitter]
+
+      Provider.find_or_create_by_user_id_and_name(user: user, name: auth.provider, token: auth.credentials.token, secret: auth.credentials.secret)
     end
     
     if user
       session[:token] = user.session_token = SecureRandom.hex
 
       if user.save
-        if user.photo_url && auth.provider != 'facebook'
-          redirect_to root_path, :notice => "Signed in!"
-        else
+        if auth.provider == 'facebook' || auth.provider == 'twitter' || !user.photo_url
           redirect_to edit_user_path(user)
+        else
+          redirect_to root_path, :notice => "Signed in!"
         end
       else
         redirect_to :root, :notice => "Please try again!"

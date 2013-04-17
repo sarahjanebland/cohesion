@@ -21,6 +21,7 @@ describe User do
 	it { should allow_mass_assignment_of(:github_token) }
 	it { should allow_mass_assignment_of(:facebook_url) }
 	it { should allow_mass_assignment_of(:twitter_url) }
+  it { should allow_mass_assignment_of(:linkedin_url)}
   
   xit { should validate_presence_of :cohort_id }
   it { should validate_presence_of :github_uid }

@@ -10,6 +10,7 @@ gem 'rails_config'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 gem 'bootstrap-sass'
 gem 'nokogiri'

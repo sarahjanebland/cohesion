@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :nickname, :phone, 
                   :company, :location, :advice, :restaurant, :website_url, :blog_url, 
                   :cohort_id, :photo_url, :github_uid, :provider, :github_token,
-                  :facebook_url, :twitter_url
+                  :facebook_url, :twitter_url, :linkedin_url
                   
   # validates :cohort_id, presence: true
   validates :github_uid, presence: true, uniqueness: true
