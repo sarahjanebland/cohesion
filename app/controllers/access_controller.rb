@@ -10,7 +10,7 @@ class AccessController < ApplicationController
   	if @cohort
       session[:secret] = params[:id]
   		
-      render "pages/index"
+      redirect_to root_url
   	else
   		render :status => 401
   	end

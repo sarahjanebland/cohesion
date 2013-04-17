@@ -5,12 +5,12 @@
 $(document).ready ->
 
   # Event Listeners
-  $('ul.avatars li.avatar').bind 'click', (e) ->
+  $('ul.avatars li.avatar').on 'click', (e) ->
     $('ul.avatars li.avatar').removeClass('selected')
     $(this).addClass('selected')
-    $(this).find('input').attr('checked', true)
+    $(this).find('input').prop('checked', true)
 
-  $('input.search-query').bind 'keyup', (e) ->
+  $('input.search-query').on 'keyup', (e) ->
     phrase = $(this).val()
     $.ajax
       url: '/search'
