@@ -17,12 +17,16 @@ Phaseboot::Application.routes.draw do
 
   match "/signout" => "sessions#destroy", :as => :signout
 
-  resources :users
+  resources :users do
+    get "/photo" => "users#photo"
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :access, only: [:show]
+  
   resources :cohorts do
-  resources :users, only: [:index]
-end
+    resources :users, only: [:index]
+  end
 
 
   

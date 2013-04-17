@@ -1,0 +1,4 @@
+<%= form_for @user, :html => {:class => "form-horizontal"} do |f| %>
+  <%= render "photos", f: f %>
+  <%= f.submit "Update", :class => "controls" %>
+<% end %>

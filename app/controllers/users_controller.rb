@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(current_user.id)
+    @user = User.find(current_user)
     @avatars = avatars_by_cohort(@user.cohort)
   end
 
@@ -61,6 +61,11 @@ class UsersController < ApplicationController
   end
 
 private
+
+  def photo
+    @user = User.find(params[:user_id])
+    @avatars = avatars_by_cohort(@user.cohort)
+  end
 
   def avatars_by_cohort(cohort)
     doc = Nokogiri::HTML(open(cohort.photos_url))
