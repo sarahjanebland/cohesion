@@ -33,4 +33,11 @@ $(function() {
 		});
 	});
 
+	$(".search-box li").click(function(){
+		$(this).children(".quickinfo").toggle();
+
+	});
+
+
+
 });
