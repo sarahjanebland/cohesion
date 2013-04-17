@@ -9,6 +9,7 @@ gem 'pg'
 gem 'rails_config'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'omniauth-facebook'
 
 gem 'bootstrap-sass'
 gem 'nokogiri'
