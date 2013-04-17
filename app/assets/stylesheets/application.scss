@@ -41,3 +41,40 @@ ul.table {
   float: right;
   text-align: right;
 }
+
+#top_container {
+  padding: 0 20px;
+}
+
+header {
+  .navbar-inner {
+    border-radius: 0;
+    -webkit-navbar-inner: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  body.custom {
+    padding: 0;
+  }
+
+  header img {
+    width: 170px;
+  }
+
+  header.navbar .nav > li > a {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  nav.pull-right {
+    float: left;
+    padding: 0px;
+  }
+
+  .navbar .nav > li {
+    line-height: 0px;
+  }
+  
+}
