@@ -14,6 +14,15 @@ class User < ActiveRecord::Base
   belongs_to :cohort
   has_one :admin
 
+  def upload_avatar(photo_url)
+    s3 = AWS::S3.new
+    bucket = s3.buckets['bootconnect']
+    file = open(photo_url)
+    basename = "#{self.first_name}-#{SecureRandom.hex(14)}.png"
+    o = bucket.objects[basename]
+    o.write(:file => file)
+    o.url_for(:read).to_s
+  end
   def format_urls
     self.facebook_url = self.facebook_url.gsub(/.*\//, '') if self.facebook_url
     self.twitter_url = self.twitter_url.gsub(/.*\//, '') if self.twitter_url
