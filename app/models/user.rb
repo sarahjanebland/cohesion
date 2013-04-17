@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
     basename = "#{self.first_name}-#{SecureRandom.hex(14)}.png"
     o = bucket.objects[basename]
     o.write(:file => file)
-    o.url_for(:read).to_s
+    o.public_url.to_s
   end
   def format_urls
     self.facebook_url = self.facebook_url.gsub(/.*\//, '') if self.facebook_url
