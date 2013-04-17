@@ -5,7 +5,7 @@
 
   <% unless @user.photo_url %>
     <div class="skinny">
-      <%= render "photos" %>
+      <%= render "photos", f: f %>
     </div>
   <% else %>
     <div class="avatar_change">
