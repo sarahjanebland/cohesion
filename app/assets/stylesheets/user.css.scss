@@ -10,9 +10,12 @@
 }
 
 ul.avatars {
-  width: 440px;
   float: right;
   margin-top: 0px;
+}
+
+.skinny ul.avatars {
+  width: 440px;
 }
 
 #update_group {
@@ -57,4 +60,11 @@ ul.avatars li.avatar img {
 
 .controls img {
   margin-left: 20px;
+}
+
+.avatar_change {
+  .change {
+    margin-left: 200px;
+    font-size: 10px;
+  }
 }

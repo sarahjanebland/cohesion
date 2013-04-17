@@ -7,9 +7,13 @@ Phaseboot::Application.routes.draw do
   # We ask that you don't use the :as option here, as Forem relies on it being the default of "forem"
   mount Forem::Engine, :at => '/forums'
 
-  resources :users
+  resources :users do
+    get "/photo" => "users#photo"
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :access, only: [:show]
+  
   resources :cohorts do
     resources :users, only: [:index]
   end

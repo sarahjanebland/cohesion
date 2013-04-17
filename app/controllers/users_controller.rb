@@ -54,6 +54,11 @@ class UsersController < ApplicationController
     render json: search.results
   end
 
+  def photo
+    @user = User.find(params[:user_id])
+    @avatars = avatars_by_cohort(@user.cohort)
+  end
+
   private
 
   def avatars_by_cohort(cohort)
