@@ -11,9 +11,12 @@
   box-shadow: none;
 }
 
+.custom h1{
+	font-size: 24px;
+}
+
 .custom h2{
 	font-size: 16px;
-	padding-top: 20px;
 }
 
 .custom table{
@@ -22,11 +25,11 @@
 
 .custom tr{
 	text-align: left;
-	color: #fff;
+	color: #333;
 }
 
 .custom thead{
-	background-color: #444;
+	background-color: #aeaeae;
 }
 
 .custom .description{
@@ -165,14 +168,17 @@
 
 .custom .posts-count{
 	vertical-align: top;
+	color: #333;
 }
 
 .custom .views-count{
 	vertical-align: top;
+	color: #333;
 }
 
 .custom .topics-count{
 	vertical-align: top;
+	color: #333;
 }
 
 .custom  menu{
@@ -201,20 +207,55 @@
 
 .custom .username{
 	font-style: italic;
-	color: #666;
+	color: #888;
 	border-top: 1px solid #666;
 	padding-bottom: 10px;
 	padding-top: 10px;
 }
 
 .custom .actions{
-	border-top: 1px solid #666;
+	border-top: 1px dashed #666;
+	padding-bottom: 15px;
 }
 
 .custom .desc-and-last-post{
 	width: 650px;
+	padding-left: 10px;
+	color: #333;
 }
 
 .custom .started-by{
-	color: #666;
+	color: #888;
+}
+
+.custom .title{
+	padding-left: 10px;
+}
+
+.custom h2{
+	padding-left: 10px;
+}
+
+.custom #forums_title{
+	padding-left: 10px;
+}
+
+.custom #posts {
+	padding-left: 10px;
+}
+
+.custom .post {
+	border-top: 6px solid #333;
+}
+
+.custom pre{
+	background-color: rgb(224, 224, 224);
+}
+
+.custom code br{
+	display: none;
+}
+
+.custom .category{
+	padding-bottom: 20px
 }
