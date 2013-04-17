@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(current_user.id)
-    params[:user][:photo_url] = @user.upload_avatar(params[:user][:photo_url])
+    params[:user][:photo_url] = @user.upload_avatar(params[:user][:photo_url]) if params[:user][:photo_url]
     @user.update_attributes(params[:user])
     redirect_to "/users/#{current_user.id}"
   end
@@ -60,12 +60,12 @@ class UsersController < ApplicationController
     @cohorts = Cohort.all
   end
 
-private
-
   def photo
     @user = User.find(params[:user_id])
     @avatars = avatars_by_cohort(@user.cohort)
   end
+
+private
 
   def avatars_by_cohort(cohort)
     doc = Nokogiri::HTML(open(cohort.photos_url))
