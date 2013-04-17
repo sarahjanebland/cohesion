@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(current_user)
     @avatars = avatars_by_cohort(@user.cohort)
+    @show_facebook = Provider.where("user_id = ?", @user.id).count > 0 ? false : true
   end
 
   def show

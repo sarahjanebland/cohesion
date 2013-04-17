@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130415181639) do
+ActiveRecord::Schema.define(:version => 20130417193009) do
 
   create_table "admins", :force => true do |t|
     t.integer  "user_id"
@@ -162,6 +162,7 @@ ActiveRecord::Schema.define(:version => 20130415181639) do
     t.boolean  "forem_admin",          :default => false
     t.string   "forem_state",          :default => "approved"
     t.boolean  "forem_auto_subscribe", :default => false
+    t.date     "birthday"
   end
 
 end
