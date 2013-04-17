@@ -29,8 +29,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(current_user.id)
+    params[:user][:photo_url] = @user.upload_avatar(params[:user][:photo_url])
     @user.update_attributes(params[:user])
-
     redirect_to "/users/#{current_user.id}"
   end
 
