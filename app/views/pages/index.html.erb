@@ -8,11 +8,17 @@
 
  
 
-  <%= link_to image_tag('l-arrow.png', :class => 'l-arrow'), pages_random_user_path, :remote => true  %>
-  <%= link_to image_tag('r-arrow.png', :class => 'r-arrow'), pages_random_user_path, :remote => true  %>
+  <%= link_to image_tag('l-arrow.png', :class => 'l-arrow'), "#" %>
+  <%= link_to image_tag('r-arrow.png', :class => 'r-arrow'), "#"  %>
   
- 	<div class="featured_user">
- 		<%= render '/pages/home_users', :user => @user %>
+ 	<div class="featured_users">
+    <% @users.each do |user| %>
+      <div class="featured_user">
+ 		    <img src="<%= user.photo_url %>" alt="<%= user.nickname %>" />
+        <h4><%= user.first_name %> <%= user.last_name %></h4>
+        <p>&ldquo;<%= user.advice %>&rdquo;</p>
+      </div>
+    <% end %>
 	</div>
 
 

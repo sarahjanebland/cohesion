@@ -5,11 +5,8 @@ class PagesController < ApplicationController
   respond_to :json, :html
 
   def index
-    @user = User.featured || User.new
+    @users = User.wise.shuffle
     @cohort = Cohort.all
-    
-    @users = User.all
-  	
   end
 
   def search
@@ -23,10 +20,5 @@ class PagesController < ApplicationController
   end
   
   def admin
-  end
-
-  def random_user
-    user = User.all.sample
-    render :json => render_to_string(:partial => "pages/home_users", :locals => {:user => user}).to_json
   end
 end

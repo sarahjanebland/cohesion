@@ -12,7 +12,6 @@ Phaseboot::Application.routes.draw do
   post '/pages/search'
   get '/auth/:provider/callback', to: 'sessions#create'
   post '/search' => 'users#query'
-  get '/pages/random_user'
   get '/users/cohort_reselect'
 
   match "/signout" => "sessions#destroy", :as => :signout
@@ -27,7 +26,6 @@ Phaseboot::Application.routes.draw do
   resources :cohorts do
     resources :users, only: [:index]
   end
-
 
   
   # The priority is based upon order of creation:

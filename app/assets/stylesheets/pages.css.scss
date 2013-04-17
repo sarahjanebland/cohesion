@@ -10,9 +10,15 @@
   margin: 50px auto;
   text-align: center;
   position: relative;
-  
-  
 
+  .featured_user {
+    display: none;
+  }
+
+  .featured_user.show {
+    display: block;
+  }
+  
   h4 {
     text-align: center;
   }
@@ -62,10 +68,4 @@
     font-family: 'Sanchez', serif;
     line-height: 40px;
   }
-
-  
 }
-
-
-
-
