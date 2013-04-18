@@ -150,33 +150,3 @@ nav {
   padding: 10px 15px 10px;
 }
 
-.quickinfo {
-  position: absolute;
-  float: none;
-  width: 189px;
-  height: 194px;
-  padding-top: 0px;
-  padding-left: 5px;
-  background-color: #fff;
-  opacity: 0.9;
-  display: none;
-}
-
-.quickinfo li{
-  display: block;
-  line-height: 25px;
-  float: none;
-}
-
-.quickinfo img{
-  border: none;
-  box-shadow: none;
-}
-
-.quickinfo .close{
-  position: absolute;
-  right: 0;
-  margin-top: -16px;
-  margin-right: -17px;
-  opacity: 1.0;
-}
