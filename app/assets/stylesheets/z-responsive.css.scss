@@ -8,6 +8,10 @@
     width: 148px;
   }
 
+  .navbar .nav > li > a {
+    font-size: 14px;
+  }
+
   .profile_img span {
     font-size: 14px;
   }
@@ -63,16 +67,20 @@
   }
   .custom #top_container {
     padding: 0px;
+    margin: 0;
   }
   .custom .search-box {
     overflow: hidden;
+    width: 336px;
+    margin: 0 auto;
   }
   .custom .search-users {
     border-top: 1px solid white;
     margin-bottom: 10px;
-    padding: 20px 20px 10px 20px;
+    padding: 20px 20px 10px 0px;
     background: #eee;
-    box-shadow: 10px 0px 10px #666;  
+    box-shadow: 10px 0px 10px #666;
+    width: 100%;  
   }
   .custom .form-horizontal,
   .custom .welcome {
@@ -83,7 +91,7 @@
   }
 
   div#top_container.container {
-    width: 370px;
+    
   }
 
   div#update_group {
