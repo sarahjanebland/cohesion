@@ -33,7 +33,11 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
     params[:user][:photo_url] = @user.upload_avatar(params[:user][:photo_url]) if params[:user][:photo_url]
     @user.update_attributes(params[:user])
-    redirect_to "/users/#{current_user.id}"
+    if @user.photo_url
+      redirect_to user_path(@user)
+    else
+      redirect_to edit_user_path(@user), :notice => "You must select your photo!"
+    end
   end
 
   def destroy

@@ -40,6 +40,11 @@ class User < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end
 
+  def photo
+    return photo_url if self.photo_url =~ /\w/
+    return "/assets/default-profile-image.gif"
+  end
+
   class << self
     def current
       Cohort.includes(:users).current.map { |cohort| cohort.users }.flatten

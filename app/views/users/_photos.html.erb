@@ -2,7 +2,7 @@
   <% @avatars.each do |img| %>
     <% select = img[:src].include?(@user.first_name.downcase) %>
     <li class="avatar <%= select ? 'selected' : '' %> <%= "cohort_#{img[:id]}" %>">
-      <%= f.radio_button :photo_url, img[:src], :checked => select  %>
+      <%= f.radio_button :photo, img[:src], :checked => select  %>
       <%= image_tag img[:src] %>
     </li>
   <% end %>
