@@ -1,0 +1,98 @@
+@media (max-width: 480px) {
+  .profile_img {
+    width: 148px;
+  }
+
+  .profile_img span {
+    font-size: 14px;
+  }
+  .profile_img img {
+    width: 132px;
+  }
+  .custom table {
+    max-width: 480px;
+    width: 100%;
+  }
+  .topics-count,
+  .posts-count,
+  .views-count {
+    padding: 0 10px;
+  }
+  .custom #forums_container,
+  .custom #forum {
+    width: 100%;
+  }
+  .quickinfo {
+    width: 138px;
+    height: 140px;
+
+  }
+  .quickinfo .close {
+    width: 24px;
+  }
+  .quickinfo img.social_icons {
+    width: 36px;
+  }
+  .avatar_change .change a{
+    text-align: left;
+    display: block;
+  }
+  .avatar_change .profile_img,
+  .avatar_change .change {
+    margin-left: 0 !important;
+  }
+  input[type=submit] {
+    padding: 15px;
+    font-size: 20px;
+  }
+  .search-users #view_cohort {
+    width: 280px;
+  }
+  .custom .navbar {
+    margin-bottom: 0px;
+
+  }
+  .custom #top_container {
+    padding: 0px;
+  }
+  .custom .search-box {
+    overflow: hidden;
+  }
+  .custom .search-users {
+    border-top: 1px solid white;
+    margin-bottom: 10px;
+    padding: 20px 20px 10px 20px;
+    background: #eee;
+    box-shadow: 10px 0px 10px #666;  
+  }
+  .custom .form-horizontal,
+  .custom .welcome {
+    padding: 0 20px;
+  }
+  .custom #forum_topic_links {
+    margin: 20px;
+  }
+  
+
+}
+@media (max-width: 979px) { 
+  .custom table {
+    max-width: 900px;
+    width: 100%;
+
+  }
+  .avatar_change .profile_img,
+  .avatar_change .change {
+    margin-left: 200px;
+  }
+   
+  .topics-count,
+  .posts-count,
+  .views-count {
+    padding: 0 10px;
+  }
+  .custom #forums_container,
+  .custom #forum {
+    width: 100%;
+  }
+}

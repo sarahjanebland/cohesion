@@ -905,6 +905,7 @@
     display: block;
     line-height: 20px;
   }
+
   input[type="checkbox"],
   input[type="radio"] {
     border: 1px solid #ccc;
