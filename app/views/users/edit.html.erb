@@ -61,16 +61,23 @@
   <% unless @user.photo_url %>
     <%= render "photos", f: f %>
   <% else %>
-    <div class="avatar_change">
+    
       <div class="control-group">
         
-        <div class="profile_img">
+        
+        <div class="change">
+          <div class="profile_img">
           <%= image_tag @user.photo_url %>
           <span><%= @user.name %></span>
         </div>
+
+          <%= link_to "Change Photo", user_photo_path(@user) %>
+          <%= link_to "Change Cohort", {:action=>"cohort_reselect", :controller=>"users"} %>
+        </div>
       </div>
-      <span class="change"><%= link_to "Change photo", user_photo_path(@user) %></span>
-    </div>
+      
+  
+    
   <% end %>
 
   <div class="control-group">

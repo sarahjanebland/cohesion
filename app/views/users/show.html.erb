@@ -22,9 +22,7 @@
   <li><div class="profile_label">LinkedIn Profile: <%= link_to @user.linkedin_url, @user.linkedin_url %></div></li>
   <li><div class="profile_label">Facebook Profile:</div> <%= link_to @user.facebook_url, "http://facebook.com/#{@user.facebook_url}" %></li>
   <li><div class="profile_label">Twitter Profile:</div> <%= link_to "@#{@user.twitter_url}", "http://twitter.com/#{@user.twitter_url}" %></li>
-  <% if current_user.id == @user.id %>
-    <p><%= link_to "Change Cohort", {:action=>"cohort_reselect", :controller=>"users"} %></p>
-  <% end %>
+  
   <% if current_user.admin? %>
     <p><%= link_to "Delete", user_path(@user), method: :delete %></p>
   <% end %>

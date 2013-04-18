@@ -72,12 +72,13 @@ header a:hover {
   span {
     display: block;
     font-family: 'Rock Salt', cursive;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: center;
     margin: 5px 5px 10px 5px;
     text-align: center;
     overflow: hidden;
     white-space: nowrap;
+    line-height: 27px;
   }
 }
 
@@ -104,6 +105,7 @@ header a:hover {
   ul{
     list-style-type: none;
     margin-top: 10px;
+    overflow: hidden;
   }
 
   li{
