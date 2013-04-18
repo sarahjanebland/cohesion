@@ -30,7 +30,11 @@ class User < ActiveRecord::Base
   end
 
   def phone_number=(num)
-    self.phone = num.split('').select{|l| l =~ /\d/ }.join
+    if num.present? 
+      self.phone = num.split('').select{|l| l =~ /\d/ }.join
+    else
+      self.phone = "000000000"
+    end
   end
 
   def phone_number
