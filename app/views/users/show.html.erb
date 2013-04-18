@@ -3,12 +3,11 @@
 
 <div class="profile_img">
   <%= image_tag @user.photo_url %>
+  <span><%= @user.name %></span>
 </div>
   
 <div>
 <ul id='user_info'>
-  <li><div class="profile_label">First Name:</div> <%= @user.first_name %></li>
-  <li><div class="profile_label">Last Name:</div> <%= @user.last_name %></li>
   <li><div class="profile_label">Cohort:</div> <%= @user.cohort.name %></li>
   <li><div class="profile_label">Email:</div> <%= mail_to "#{@user.email}" %></li>
   <% if @user.birthday %><li><div class="profile_label">Birthday: <%= @user.birthday %></div></li><% end %>

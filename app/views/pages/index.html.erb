@@ -14,8 +14,10 @@
  	<div class="featured_users">
     <% @users.each do |user| %>
       <div class="featured_user">
- 		    <img src="<%= user.photo_url %>" alt="<%= user.nickname %>" />
-        <h4><%= user.first_name %> <%= user.last_name %></h4>
+        <div class="profile_img">
+ 		     <img src="<%= user.photo_url %>" alt="<%= user.nickname %>" />
+          <span><%= user.name %></span>
+        </div>
         <p>&ldquo;<%= user.advice %>&rdquo;</p>
       </div>
     <% end %>

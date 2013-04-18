@@ -11,10 +11,10 @@
 	  
 	  <li>
 		  <%= link_to image_tag('github_icon.png', :class => 'social_icons'), "http://github.com/#{user.nickname}" %>
-		  <% if user.facebook_url %>
+		  <% unless user.facebook_url.blank? %>
 		  	<%= link_to image_tag('facebook_icon.png', :class => 'social_icons'), "http://facebook.com/#{user.facebook_url}" %>
 		  <% end %>	
-		  <% if user.twitter_url %>
+		  <% unless user.twitter_url.blank? %>
 		  	<%= link_to image_tag('twitter_icon.png', :class => 'social_icons'), "http://twitter.com/#{user.twitter_url}" %>
 		  <% end %>	
 		</li>

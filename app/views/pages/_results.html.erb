@@ -4,7 +4,10 @@
 
 	<li>
 		<%= render "/users/quickinfo", {:user => user} %>
-		<img src="<%= user.photo_url %>" alt="<%= user.nickname %>" />
+    <div class="profile_img">
+		  <img src="<%= user.photo_url %>" alt="<%= user.nickname %>" />
+      <span><%= user.name %></span>
+    </div>
 	<li>
 	<% end %>
 </ul>

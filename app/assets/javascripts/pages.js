@@ -33,7 +33,8 @@ $(function() {
 		});
 	});
 
-	$(".search-box li").click(function(){
+	$(".container").on("click", ".search-box li", function(){
+		
 		$(this).children(".quickinfo").toggle();
 
 	});
