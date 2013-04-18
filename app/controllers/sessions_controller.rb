@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
                     :first_name => auth.info.first_name || auth.info.name.split(' ').first,
                     :last_name => auth.info.last_name || auth.info.name.split(' ').last,
                     :location => auth.extra.raw_info.location,
-                    :phone => auth.info.phone,
+                    :phone_number => auth.info.phone,
                     :company => auth.extra.raw_info.company,
                     :github_token => auth.credentials.token,
                     :blog_url => auth.extra.raw_info.blog || auth.info.urls['Blog'],
