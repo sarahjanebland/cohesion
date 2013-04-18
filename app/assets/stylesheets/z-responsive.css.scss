@@ -76,6 +76,23 @@
   .custom #forum_topic_links {
     margin: 20px;
   }
+
+  div#top_container.container {
+    width: 370px;
+  }
+
+  div#update_group {
+    max-width: 350px 
+  }
+
+  .form-horizontal.user-form {
+    max-width: 335px;
+  }
+
+  input.controls {
+    padding: 5px;
+    font-size: 16px;
+  }
   
 
 }
