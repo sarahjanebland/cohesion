@@ -50,6 +50,10 @@ header a:hover {
 
 }
 
+.profile_img {
+  float: left;
+}
+
 .tiny_pics {
   width: 75px;
   border: 3px solid white;
@@ -59,24 +63,8 @@ header a:hover {
   background-image: linear-gradient(to bottom, #666, #111111) !important;
 }
 
-.profile_img {
-  float: left;
-  background: #fff;
-  box-shadow: 3px 3px 10px 0px #666;
-
-  img {
-    box-shadow: none !important;
-  }
-
-  span {
-    display: block;
-    font-family: 'Rock Salt', cursive;
-    font-size: 20px;
-    text-decoration: center;
-    margin: 5px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
+.profile_img img{
+  box-shadow: 2px 2px 7px #666;
 }
 
 .profile_label{
@@ -90,22 +78,18 @@ header a:hover {
 
 .search-box{
   position: relative;
+}
 
-  .profile_img {
-    margin: 0 10px;
-  }
-
-  img {
+.search-box img {
     box-shadow: 2px 2px 7px #666;
-  }
+}
 
-  ul{
-    list-style-type: none;
-  }
+.search-box ul{
+  list-style-type: none;
+}
 
-  li{
-    float: left;
-  }
+.search-box li{
+  float: left;
 }
 
 .search-users {
@@ -169,14 +153,13 @@ nav {
 .quickinfo {
   position: absolute;
   float: none;
-  width: 180px;
+  width: 189px;
   height: 194px;
   padding-top: 0px;
-  padding-left: 10px;
+  padding-left: 5px;
   background-color: #fff;
   opacity: 0.9;
   display: none;
-  margin: 5px 10px;
 }
 
 .quickinfo li{

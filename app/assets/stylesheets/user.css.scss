@@ -6,6 +6,7 @@
   width: 940px;
 }
 
+
 #user_info {
   list-style: none;
   display: inline-block;
@@ -20,8 +21,6 @@
 }
 
 ul.avatars {
-  width: 440px;
-  float: right;
   margin-top: 0px;
 
   li.avatar {
@@ -66,7 +65,8 @@ ul.avatars {
 .avatar_change {
   .change {
     margin-left: 200px;
-    font-size: 10px;
+    font-size: 14px;
+    padding-bottom: 10px;
   }
 }
 
