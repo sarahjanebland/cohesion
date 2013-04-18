@@ -168,13 +168,14 @@ nav {
 .quickinfo {
   position: absolute;
   float: none;
-  width: 189px;
+  width: 180px;
   height: 194px;
   padding-top: 0px;
-  padding-left: 5px;
+  padding-left: 10px;
   background-color: #fff;
   opacity: 0.9;
   display: none;
+  margin: 5px 10px;
 }
 
 .quickinfo li{
