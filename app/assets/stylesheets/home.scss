@@ -61,6 +61,7 @@ header a:hover {
 
 .profile_img {
   float: left;
+  width: 194px;
   background: #fff;
   box-shadow: 3px 3px 10px 0px #666;
 
@@ -71,11 +72,12 @@ header a:hover {
   span {
     display: block;
     font-family: 'Rock Salt', cursive;
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: center;
-    margin: 5px;
-    margin-bottom: 10px;
+    margin: 5px 5px 10px 5px;
     text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
 
@@ -92,7 +94,7 @@ header a:hover {
   position: relative;
 
   .profile_img {
-    margin: 0 10px;
+    margin: 0 10px 20px 10px;
   }
 
   img {
