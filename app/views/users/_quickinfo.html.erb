@@ -3,8 +3,8 @@
 		<%= image_tag('x-mark-4-32.png', :class => 'close') %>
 	
 	<ul>
-		<li><%= user.first_name %> <%= user.last_name %></li>
-	  <li><%= mail_to "#{user.email}" %></li>
+		
+		<li><%= mail_to "#{user.email}" %></li>
 	  <li><%= phone_number_link(user.phone) %></li>
 	  <li><%= link_to user.website_url, "http://#{user.website_url}" %></li>
 	  <li><%= link_to user.blog_url, "http://#{user.blog_url}" %></li>
