@@ -91,7 +91,7 @@ header a:hover {
 }
 
 .search-box li{
-  float: left;
+  float: none;
 }
 
 .search-users {
