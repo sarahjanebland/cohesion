@@ -24,6 +24,7 @@ class SessionsController < ApplicationController
                     :blog_url => auth.extra.raw_info.blog || auth.info.urls['Blog'],
                     :cohort_id => cohort.id
                     )
+        p user.errors
       else
         user = User.find_by_github_uid(auth.uid)
       end
