@@ -36,6 +36,10 @@ class User < ActiveRecord::Base
     Admin.exists?(user_id: self.id)
   end
 
+  def name
+    "#{self.first_name} #{self.last_name}"
+  end
+
   class << self
     def current
       Cohort.includes(:users).current.map { |cohort| cohort.users }.flatten

@@ -50,10 +50,6 @@ header a:hover {
 
 }
 
-.profile_img {
-  float: left;
-}
-
 .tiny_pics {
   width: 75px;
   border: 3px solid white;
@@ -63,8 +59,23 @@ header a:hover {
   background-image: linear-gradient(to bottom, #666, #111111) !important;
 }
 
-.profile_img img{
-  box-shadow: 2px 2px 7px #666;
+.profile_img {
+  float: left;
+  background: #fff;
+  box-shadow: 3px 3px 10px 0px #666;
+
+  img {
+    box-shadow: none !important;
+  }
+
+  span {
+    display: block;
+    font-family: "Papyrus";
+    font-size: 20px;
+    text-decoration: center;
+    margin: 5px;
+    text-align: center;
+  }
 }
 
 .profile_label{
@@ -78,20 +89,22 @@ header a:hover {
 
 .search-box{
   position: relative;
-}
 
-.search-box img {
+  .profile_img {
+    margin: 0 10px;
+  }
+
+  img {
     box-shadow: 2px 2px 7px #666;
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
+  }
 
-.search-box ul{
-  list-style-type: none;
-}
+  ul{
+    list-style-type: none;
+  }
 
-.search-box li{
-  float: left;
+  li{
+    float: left;
+  }
 }
 
 .search-users {

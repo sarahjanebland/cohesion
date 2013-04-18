@@ -13,6 +13,20 @@
 
   .featured_user {
     display: none;
+
+    .profile_img {
+      float: none;
+      width: 194px;
+      height: 225px;
+      margin: auto;
+      display: block;
+      position: relative;
+    }
+
+    span {
+      position: absolute;
+      width: 180px;
+    }
   }
 
   .featured_user.show {

@@ -64,7 +64,10 @@
     <div class="avatar_change">
       <div class="control-group">
         <div class="control-label"></div>
-        <div class="controls"><%= image_tag @user.photo_url %></div>
+        <div class="profile_img">
+          <%= image_tag @user.photo_url %>
+          <span><%= @user.name %></span>
+        </div>
       </div>
       <span class="change"><%= link_to "Change photo", user_photo_path(@user) %></span>
     </div>
