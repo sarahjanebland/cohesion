@@ -1,7 +1,9 @@
 .featured_users .profile_img img{
   display: block;
 }
+
 @media (max-width: 480px) {
+  .flash-notice { margin-bottom: 0px; }
   .profile_img {
     width: 148px;
   }
