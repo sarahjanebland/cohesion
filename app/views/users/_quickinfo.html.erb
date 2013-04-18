@@ -5,7 +5,7 @@
 	<ul>
 		
 		<li><%= mail_to "#{user.email}" %></li>
-	  <li><%= phone_number_link(user.phone) %></li>
+	  <li><%= phone_number_link(user.phone_number) %></li>
 	  <li><%= link_to user.website_url, "http://#{user.website_url}" %></li>
 	  <li><%= link_to user.blog_url, "http://#{user.blog_url}" %></li>
 	  
