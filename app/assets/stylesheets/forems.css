@@ -259,3 +259,8 @@
 .custom .category{
 	padding-bottom: 20px
 }
+.custom #forums_container,
+.custom #forum {
+	width: 980px;
+	margin: 0 auto;
+}

@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20130417215836) do
 
   create_table "cohorts", :force => true do |t|
     t.string   "name"
-    t.date     "start_date"
+    t.string   "start_date"
     t.string   "email"
     t.string   "photos_url"
     t.string   "secret_url"
@@ -162,6 +162,7 @@ ActiveRecord::Schema.define(:version => 20130417215836) do
     t.boolean  "forem_admin",          :default => false
     t.string   "forem_state",          :default => "approved"
     t.boolean  "forem_auto_subscribe", :default => false
+    t.string   "avatar"
     t.date     "birthday"
     t.string   "linkedin_url"
   end
