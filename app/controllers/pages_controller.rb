@@ -5,7 +5,11 @@ class PagesController < ApplicationController
   respond_to :json, :html
 
   def index
-    @users = User.wise.shuffle
+    if current_user
+      @users = User.current
+    else
+      @users = User.wise.shuffle
+    end
     @cohort = Cohort.all
   end
 
